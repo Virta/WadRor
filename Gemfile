@@ -16,6 +16,9 @@ group :production do
   gem 'rails_12factor'
 end
 
+# use debugger
+gem 'debugger', group: [:development, :test]
+
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.0'
 

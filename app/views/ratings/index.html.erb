@@ -6,4 +6,8 @@
   <% end %>
 </ul>
 
-<%= @ratings.count %>
+<p>Total ratings: <%= @ratings.count %></p>
+
+<br>
+
+<p>Create a new <%= link_to 'rating', ratings_new_url%></p>
