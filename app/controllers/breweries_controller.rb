@@ -79,9 +79,7 @@ class BreweriesController < ApplicationController
 
       authenticate_or_request_with_http_basic do |username, password|
         # username == "admin" and password == "secret"
-        admin_accounts.each do |key, value|
-          username == key and password == value
-        end
+        admin_accounts[username] == password
       end
       # raise "Not yet implemented"
     end
