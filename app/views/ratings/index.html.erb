@@ -13,4 +13,6 @@
 
 <br>
 
-<p>Create a new <%= link_to 'rating', new_rating_path%></p>
+<% unless session[:user_id].nil? %>
+    <p>Create a new <%= link_to 'rating', new_rating_path%></p>
+<% end %>
