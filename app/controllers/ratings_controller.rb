@@ -12,7 +12,7 @@ class RatingsController < ApplicationController
     @rating = Rating.new params.require(:rating).permit(:score, :beer_id)
 
     if @rating.save
-      current_user.ratings << rating
+      current_user.ratings << @rating
       redirect_to users_path current_user
     else
       @beers = Beer.all

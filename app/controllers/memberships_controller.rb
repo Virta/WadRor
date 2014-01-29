@@ -15,6 +15,7 @@ class MembershipsController < ApplicationController
   # GET /memberships/new
   def new
     @membership = Membership.new
+    @beer_clubs = BeerClub.all
   end
 
   # GET /memberships/1/edit
@@ -24,17 +25,29 @@ class MembershipsController < ApplicationController
   # POST /memberships
   # POST /memberships.json
   def create
-    @membership = Membership.new(membership_params)
 
-    respond_to do |format|
-      if @membership.save
-        format.html { redirect_to @membership, notice: 'Membership was successfully created.' }
-        format.json { render action: 'show', status: :created, location: @membership }
-      else
-        format.html { render action: 'new' }
-        format.json { render json: @membership.errors, status: :unprocessable_entity }
-      end
+    @membership = Membership.new params.require(:membership).permit(:beer_club_id)
+
+    if @membership.save
+      current_user.memberships << @membership
+      redirect_to user_path current_user
+    else
+      @beer_clubs = BeerClub.all
+      render :new
     end
+
+
+    #@membership = Membership.new(membership_params)
+    #
+    #respond_to do |format|
+    #  if @membership.save
+    #    format.html { redirect_to @membership, notice: 'Membership was successfully created.' }
+    #    format.json { render action: 'show', status: :created, location: @membership }
+    #  else
+    #    format.html { render action: 'new' }
+    #    format.json { render json: @membership.errors, status: :unprocessable_entity }
+    #  end
+    #end
   end
 
   # PATCH/PUT /memberships/1
@@ -55,10 +68,11 @@ class MembershipsController < ApplicationController
   # DELETE /memberships/1.json
   def destroy
     @membership.destroy
-    respond_to do |format|
-      format.html { redirect_to memberships_url }
-      format.json { head :no_content }
-    end
+    redirect_to user_path current_user
+    #respond_to do |format|
+    #  format.html { redirect_to memberships_url }
+    #  format.json { head :no_content }
+    #end
   end
 
   private

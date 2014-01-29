@@ -4,6 +4,17 @@
 <p> Has made <%= @user.ratings.count %> ratings. </p>
 <p> Average rating: <%= @user.average_rating %> </p>
 
+<h3>Clubs:</h3>
+<ul>
+<% @user.memberships.each do |m| %>
+    <li> <%= m.beer_club.to_s %>
+    <% if current_user.id == @user.id %>
+      <%= link_to 'leave', m, method: :delete, data: { confirm: "Really leave "+m.beer_club.name+"?" } %>
+    <% end %>
+    </li>
+<% end %>
+</ul>
+
 <br>
 
 <h3>Ratings:</h3>
