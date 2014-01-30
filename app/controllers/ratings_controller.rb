@@ -13,7 +13,7 @@ class RatingsController < ApplicationController
 
     if @rating.save
       current_user.ratings << @rating
-      redirect_to users_path current_user
+      redirect_to user_path current_user
     else
       @beers = Beer.all
       render :new

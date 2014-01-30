@@ -43,7 +43,7 @@ class UsersController < ApplicationController
   def update
     if current_user == @user
     respond_to do |format|
-      if @user.update(user_params)
+      if user_params.username.nil? and @user == current_user and @user.update(user_params)
         format.html { redirect_to @user, notice: 'User was successfully updated.' }
         format.json { head :no_content }
       else
@@ -61,6 +61,16 @@ class UsersController < ApplicationController
   # DELETE /users/1.json
   def destroy
     if current_user == @user
+      ratings = @user.ratings
+      ratings.each do |r|
+        r.destroy
+      end
+
+      memberships = @user.memberships
+      memberships.each do |m|
+        m.destroy
+      end
+
       @user.destroy
       session[:user_id] = nil
       redirect_to :root

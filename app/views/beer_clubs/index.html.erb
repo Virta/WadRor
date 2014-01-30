@@ -7,7 +7,9 @@
       <tr>
         <td><%= link_to beer_club.name, beer_club %>, <%= beer_club.city %></td>
         <td><i>(<%= beer_club.founded %>)</i></td>
-        <td><%= link_to 'Destroy', beer_club, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <% if current_user %>
+            <td><%= link_to 'Destroy', beer_club, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <% end %>
       </tr>
     <% end %>
   </tbody>

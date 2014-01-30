@@ -5,6 +5,6 @@
 <%= form_for(@membership) do |f| %>
 
     Select a club: <%= f.select :beer_club_id, options_from_collection_for_select(@beer_clubs, :id, :to_s) %>
-    <%= f.submit %>
+    <%= f.submit 'Join!' %>
 
 <% end %>
