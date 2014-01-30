@@ -1,5 +1,7 @@
 <h1>Join a club!</h1>
 
+<p id="notice"> <%= notice %> </p>
+
 <%= form_for(@membership) do |f| %>
 
     Select a club: <%= f.select :beer_club_id, options_from_collection_for_select(@beer_clubs, :id, :to_s) %>

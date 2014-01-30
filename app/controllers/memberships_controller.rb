@@ -28,7 +28,10 @@ class MembershipsController < ApplicationController
 
     @membership = Membership.new params.require(:membership).permit(:beer_club_id)
 
-    if @membership.save
+    if current_user.memberships.find_by(beer_club_id:(@membership.beer_club_id))
+      @beer_clubs = BeerClub.all
+      redirect_to :back, notice: "You are already a member of that club"
+    elsif @membership.save
       current_user.memberships << @membership
       redirect_to user_path current_user
     else
