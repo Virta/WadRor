@@ -8,7 +8,7 @@
 <ul>
 <% @user.memberships.each do |m| %>
     <li> <%= m.beer_club.to_s %>
-    <% if current_user.id == @user.id %>
+    <% if current_user == @user %>
       <%= link_to 'leave', m, method: :delete, data: { confirm: "Really leave "+m.beer_club.name+"?" } %>
     <% end %>
     </li>
@@ -21,12 +21,18 @@
 <ul>
 <% @user.ratings.each do |r| %>
   <li> <%= r.to_s %>
-    <% if current_user.id == @user.id %>
+    <% if current_user == @user %>
         <%= link_to 'delete', r, method: :delete, data: { confirm: "Delete "+r.to_s+"?" } %>
     <% end %>
   </li>
 <% end %>
 </ul>
 
-<%= link_to 'Edit', edit_user_path(@user) %> |
+
 <%= link_to 'Back', users_path %>
+
+<% if current_user == @user %>
+<h4>Admin: </h4>
+<%= link_to 'Edit', edit_user_path(@user) %> |
+<%= link_to 'Delete', @user, method: :delete, data: { confirm: 'Delete your user account?' } %>
+<% end %>

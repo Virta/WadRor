@@ -16,6 +16,9 @@ group :production do
   gem 'rails_12factor'
 end
 
+# password gem
+gem 'bcrypt-ruby', '~> 3.1.2'
+
 # use debugger
 gem 'debugger', group: [:development, :test]
 
