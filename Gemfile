@@ -10,6 +10,9 @@ gem 'rails', '4.0.2'
 group :development, :test do
   gem 'sqlite3'
 end
+group :test do
+  gem 'rspec-rails', '~> 2.14.1'
+end
 # and PostgreSQL for production Active Record
 group :production do
   gem 'pg'
