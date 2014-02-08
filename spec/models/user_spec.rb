@@ -111,6 +111,23 @@ describe User do
     it "has method for determining favourite brewery" do
       user.should respond_to :favourite_brewery
     end
+
+    it "returns no brewery when no ratings" do
+      expect(user.favourite_brewery).to eq(nil)
+    end
+
+    it "returns correct brewery when one rating" do
+      beer = create_beer_with_rating(10, user)
+
+      expect(user.favourite_brewery).to eq(beer.brewery)
+    end
+
+    it "returns correct brewery when multiple ratings" do
+      create_with_brewery(1, 2, 3, 4, "Panimo 1", user)
+      create_with_brewery(5, 6, 7, 8, "Panimo 2", user)
+
+      expect(user.favourite_brewery.name).to eq("Panimo 2")
+    end
   end
 
   def create_beer_with_rating(score, user)
@@ -131,4 +148,17 @@ describe User do
       FactoryGirl.create(:rating, score:score, beer:beer, user:user)
     end
   end
+
+  def create_custom_beer_with_rating(score, brewery_name, user)
+    brewery = FactoryGirl.create(:brewery, name:brewery_name)
+    beer = FactoryGirl.create(:beer, brewery:brewery)
+    FactoryGirl.create(:rating, score:score, beer:beer, user:user)
+  end
+
+  def create_with_brewery(*scores, brewery_name, user)
+    scores.each do |s|
+      create_custom_beer_with_rating(s, brewery_name, user)
+    end
+  end
+
 end

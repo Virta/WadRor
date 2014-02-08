@@ -24,22 +24,33 @@ class User < ActiveRecord::Base
     styles_interrogate(["Weizen", "Lager", "Pale ale", "IPA", "Porter"])
   end
 
+  def favourite_brewery
+    return nil if ratings.empty?
+    breweries_interrogate
+  end
+
+  def breweries_interrogate
+    highest = 0.0
+    brewery = nil
+    Brewery.all.each do |b|
+      if (candidate = average(ratings.select{ |r| r.beer.brewery == b})) > highest
+        highest = candidate
+        brewery = b
+      end
+    end
+    brewery
+  end
+
   def styles_interrogate(styles)
     highest = 0.0
     style = ''
     styles.each do |s|
-      if (candidate = average_rating_for_style(s)) > highest
+      if (candidate = average(Rating.all.select{ |r| r.beer.style == s })) > highest
         highest = candidate
         style = s
       end
     end
     style
-  end
-
-  def average_rating_for_style(style)
-    ratings = Rating.all.select{ |r| r.beer.style == style }
-    return 0.0 if ratings.empty?
-    average(ratings)
   end
 
   def average(ratings)
