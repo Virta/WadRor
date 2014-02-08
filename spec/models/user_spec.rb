@@ -34,7 +34,7 @@ describe User do
   #end
 
   describe "with a proper password" do
-    let(:user){ User.create username:"Pekka", password:"Secret1", password_confirmation:"Secret1"}
+    let(:user){ FactoryGirl.create(:user) }
 
     it "is saved" do
       expect(user).to be_valid
@@ -50,6 +50,85 @@ describe User do
 
       expect(user.ratings.count).to eq(2)
       expect(user.average_rating).to eq(15.0)
+    end
+  end
+
+  describe "favourite beer" do
+    let(:user){FactoryGirl.create(:user)}
+
+    it "has method for their favourite_beer" do
+      user.should respond_to :favourite_beer
+    end
+
+    it "without ratings doesn't have a favourite beer" do
+      expect(user.favourite_beer).to eq(nil)
+    end
+
+    it "has correct beer when only one rating for user exists" do
+      beer = FactoryGirl.create(:beer)
+      rating = FactoryGirl.create(:rating, beer:beer, user:user)
+
+      expect(user.favourite_beer).to eq(beer)
+    end
+
+    it "is the one with highest rating when several ratings exist" do
+      best = create_beer_with_rating(25, user)
+      create_beer_with_ratings(1, 2, 3, 4, 5, 19, user)
+
+      expect(user.favourite_beer).to eq(best)
+    end
+  end
+
+  describe "favourite style" do
+    let(:user){FactoryGirl.create(:user)}
+
+    it "has method for favourite_style"  do
+      user.should respond_to :favourite_style
+    end
+
+    it "is nonexistent with zero ratings" do
+      expect(user.favourite_style).to eq(nil)
+    end
+
+    it "returns correct style when user has only one rating" do
+      beer = FactoryGirl.create(:beer, style:"Lager")
+      FactoryGirl.create(:rating, beer:beer, user:user)
+
+      expect(user.favourite_style).to eq("Lager")
+    end
+
+    it "returns correct style when user has multiple ratings" do
+      create_many_beers_with_style(1, 2, 3, "Lager", user)
+      create_many_beers_with_style(13, 14, 15, "IPA", user)
+
+      expect(user.favourite_style).to eq("IPA")
+    end
+  end
+
+  describe "favourite brewery" do
+    let(:user){FactoryGirl.create(:user)}
+
+    it "has method for determining favourite brewery" do
+      user.should respond_to :favourite_brewery
+    end
+  end
+
+  def create_beer_with_rating(score, user)
+    beer = FactoryGirl.create(:beer)
+    FactoryGirl.create(:rating, score:score, beer:beer, user:user)
+    beer
+  end
+
+  def create_beer_with_ratings(*scores, user)
+    scores.each do|score|
+      create_beer_with_rating(score, user)
+    end
+  end
+
+  def create_many_beers_with_style(*scores, style, user)
+    beer = FactoryGirl.create(:beer, style:style)
+    scores.each do |score|
+      FactoryGirl.create(:rating, score:score, beer:beer, user:user)
     end
   end
 end

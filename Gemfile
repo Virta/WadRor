@@ -12,6 +12,7 @@ group :development, :test do
 end
 group :test do
   gem 'rspec-rails', '~> 2.14.1'
+  gem 'factory_girl_rails'
 end
 # and PostgreSQL for production Active Record
 group :production do

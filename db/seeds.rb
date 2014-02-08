@@ -17,9 +17,13 @@ b2.beers.create name:"X Porter", style:"Porter"
 b3.beers.create name:"Hefezeizen", style:"Weizen"
 b3.beers.create name:"Helles", style:"Lager"
 
-u1 = User.create username:"jaska", password:"jotain", password_confirmation:"jotain"
-u2 = User.create username:"jokunen", password:"jotain", password_confirmation:"jotain"
+u1 = User.create username:"jaska", password:"Jota1n", password_confirmation:"Jota1n"
+u2 = User.create username:"jokunen", password:"Jota1n", password_confirmation:"Jota1n"
 
 c1 = BeerClub.create name:"Olutseura", founded:1986, city:"Helsinki"
 c2 = BeerClub.create name:"Panimola", founded:1943, city:"Laihiala"
 
+rating1 = Rating.create score:10, user:u1, beer:b1.beers.first
+rating2 = Rating.create score:11, user:u1, beer:b1.beers.first
+rating3 = Rating.create score:12, user:u1, beer:b1.beers.first
+rating4 = Rating.create score:13, user:u1, beer:b1.beers.first
