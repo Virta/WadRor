@@ -16,17 +16,25 @@ class BeersController < ApplicationController
   # GET /beers/new
   def new
     @beer = Beer.new
+    set_breweries_and_styles
   end
 
   # GET /beers/1/edit
   def edit
+    set_breweries_and_styles
   end
 
   # POST /beers
   # POST /beers.json
   def create
-    Beer.create params.require(:beer).permit(:name, :style, :brewery_id)
-    redirect_to beers_path
+    @beer = Beer.new params.require(:beer).permit(:name, :style, :brewery_id)
+    if @beer.save
+      redirect_to @beer
+    else
+      set_breweries_and_styles
+      render :new
+    end
+
   end
 
   # PATCH/PUT /beers/1
@@ -64,7 +72,7 @@ class BeersController < ApplicationController
       params.require(:beer).permit(:name, :style, :brewery_id)
     end
 
-  def set_breweries_and_styles_for_template
+  def set_breweries_and_styles
     @breweries = Brewery.all
     @styles = ["Weizen", "Lager", "Pale ale", "IPA", "Porter"]
   end

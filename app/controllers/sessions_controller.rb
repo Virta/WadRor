@@ -9,7 +9,7 @@ class SessionsController < ApplicationController
       redirect_to :back, notice: "Wrong username or password!"
     else
       session[:user_id] = user.id
-      redirect_to user
+      redirect_to user, notice: "Welcome back!"
     end
 
   end
