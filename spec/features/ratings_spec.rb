@@ -23,5 +23,23 @@ describe "Rating" do
     expect(user.ratings.count).to eq(1)
     expect(beer1.ratings.count).to eq(1)
     expect(beer1.average_rating).to eq(15.0)
+
+    visit ratings_path
+    expect(page).to have_content "Total ratings: 1"
+
+  end
+
+  it "displays all ratings of the user and deletes accordingly" do
+    visit new_rating_path
+    fill_in('rating[score]', with:'15')
+    click_button('Create Rating')
+
+    visit user_path(user)
+    expect(page).to have_content "Has made 1 rating."
+
+    click_link('delete')
+
+    visit user_path(user)
+    expect(page).to have_content "Has made 0 ratings."
   end
 end

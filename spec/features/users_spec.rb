@@ -2,14 +2,14 @@ require 'spec_helper'
 include OWnTestHelper
 
 describe "User" do
-  before :each do
-    FactoryGirl.create(:user)
-  end
+
+  let!(:brewery) { FactoryGirl.create :brewery, name:"Koff" }
+  let!(:beer1) { FactoryGirl.create :beer, name:"iso 3", brewery:brewery }
+  let!(:beer2) { FactoryGirl.create :beer, name:"Karhu", brewery:brewery }
+  let!(:user) { FactoryGirl.create :user }
 
   describe "who has signed up" do
     it "can signin with right credentials" do
-      visit signin_path
-
       sign_in(username: 'Teuvo', password: 'SadastaN0llaan')
 
       expect(page).to have_content "Welcome back!"
@@ -17,12 +17,25 @@ describe "User" do
     end
 
     it "is redirected back to signin if wrong password" do
-      visit signin_path
-
       sign_in(username: 'Teuvo', password: 'Jotain')
 
       expect(current_path).to eq(signin_path)
       expect(page).to have_content 'Wrong username or password!'
+    end
+
+    it "shows favourite beer and brewery when ratings" do
+      sign_in(username: 'Teuvo', password: 'SadastaN0llaan')
+
+      visit user_path(user)
+      expect(page).not_to have_content "Favourite style"
+      expect(page).not_to have_content "Favourite brewery"
+
+      FactoryGirl.create(:rating, user:user, beer:beer1, score:10)
+
+      visit user_path(user)
+      expect(page).to have_content "Favourite style: Lager"
+      expect(page).to have_content "Favourite brewery: Koff"
+
     end
   end
 

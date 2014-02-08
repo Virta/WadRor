@@ -6,4 +6,5 @@ module OWnTestHelper
     fill_in('password', with:credentials[:password])
     click_button('log in')
   end
+
 end
