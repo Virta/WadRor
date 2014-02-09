@@ -1,5 +1,10 @@
 require 'spec_helper'
 
+BeerClub
+BeerClubsController
+Membership
+MembershipsController
+
 describe User do
   it "has the username set correctly" do
     user = User.new username:"Pekka"

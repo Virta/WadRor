@@ -15,6 +15,7 @@ group :test do
   gem 'factory_girl_rails'
   gem 'launchy'
   gem 'capybara'
+  gem 'simplecov', require: false
 end
 # and PostgreSQL for production Active Record
 group :production do
