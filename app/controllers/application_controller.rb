@@ -13,4 +13,8 @@ class ApplicationController < ActionController::Base
   def enforce_signin
     redirect_to signin_path, notice: 'you have to sign in to do that' if current_user.nil?
   end
+
+  def enforce_admin_signin
+    redirect_to :back, notice: "you can't do that" unless current_user.is_admin?
+  end
 end

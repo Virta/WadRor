@@ -1,6 +1,7 @@
 class BreweriesController < ApplicationController
   before_action :set_brewery, only: [:show, :edit, :update, :destroy]
   before_action :enforce_signin, except: [:index, :show]
+  before_action :enforce_admin_signin, only:[:destroy, :edit]
   #before_action :authenticate, :only => :destroy
 
   # GET /breweries

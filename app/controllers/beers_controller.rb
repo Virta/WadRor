@@ -2,6 +2,7 @@ class BeersController < ApplicationController
   before_action :set_beer, only: [:show, :edit, :update, :destroy]
   before_action :current_user, only: [:new, :create, :edit]
   before_action :enforce_signin, except: [:index, :show]
+  before_action :enforce_admin_signin, only:[:destroy, :edit]
 
   # GET /beers
   # GET /beers.json

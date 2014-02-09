@@ -1,5 +1,7 @@
 <h1>Beer Clubs</h1>
 
+<p id="notice"><%= notice %></p>
+
 <table>
 
   <tbody>
@@ -8,7 +10,7 @@
         <td><%= link_to beer_club.name, beer_club %>, <%= beer_club.city %></td>
         <td><i>(<%= beer_club.founded %>)</i></td>
         <% if current_user %>
-            <td><%= link_to 'Destroy', beer_club, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+            <td><%= link_to 'Destroy', beer_club, method: :delete, data: { confirm: 'Are you sure?' } if current_user.is_admin? %></td>
         <% end %>
       </tr>
     <% end %>
