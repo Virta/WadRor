@@ -1,0 +1,16 @@
+language: ruby
+rvm:
+- 2.0.0
+script:
+- bundle exec rake db:migrate --trace
+- RAILS_ENV=test bundle exec rake db:migrate --trace
+- bundle exec rake db:test:prepare
+- bundle exec rspec -fd spec/
+deploy:
+  provider: heroku
+  api_key:
+    secure: Y0hvG9tf/N+9KZSPRXlXXNEmG6SsX2SNjCOlWUqbZYoP1aVDg/c5Xq/0hDLsbSBGomTXtlDL0Tt5ouu5dp1dgY7eUnLP5kggaBiyt8rYXRIq4sjE6MrG6C/TQg9+gXZqDpr5gM2ZU+vXQqqObxDiQn0oH8jsJbPe5+85NGpZ6gQ=
+  app: bissevirtaa
+  on:
+    repo: Virta/WadRor
+  run: "rake db:migrate"
