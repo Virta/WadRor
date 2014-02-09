@@ -1,9 +1,9 @@
 FactoryGirl.define do
 
   factory :user do
-    username "Teuvo"
-    password "SadastaN0llaan"
-    password_confirmation "SadastaN0llaan"
+    username 'Teuvo'
+    password 'SadastaN0llaan'
+    password_confirmation 'SadastaN0llaan'
   end
 
   factory :rating do
@@ -15,14 +15,14 @@ FactoryGirl.define do
   end
 
   factory :brewery do
-    name "Anonyeer"
+    name 'Anonyeer'
     year 1880
   end
 
   factory :beer do
-    name "AnonyBeer"
+    name 'AnonyBeer'
     brewery
-    style "Lager"
+    style 'Lager'
   end
 
 end

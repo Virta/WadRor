@@ -2,7 +2,11 @@ require 'spec_helper'
 include OWnTestHelper
 
 describe "Beer" do
+  let!(:user) { FactoryGirl.create :user }
+
   it "is is not saved when no name provided" do
+    sign_in(username: 'Teuvo', password: 'SadastaN0llaan')
+
     visit new_beer_path
     expect(page).to have_content "New beer"
 
@@ -13,6 +17,8 @@ describe "Beer" do
   end
 
   it "is saved when name is valid" do
+    sign_in(username: 'Teuvo', password: 'SadastaN0llaan')
+
     FactoryGirl.create(:brewery)
     visit new_beer_path
     fill_in('beer[name]', with:'Jekku olut')
