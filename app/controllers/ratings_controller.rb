@@ -1,4 +1,6 @@
 class RatingsController < ApplicationController
+  before_action :enforce_signin, except: [:index, :show]
+
   def index
     @ratings = Rating.all
   end

@@ -1,5 +1,6 @@
 class MembershipsController < ApplicationController
   before_action :set_membership, only: [:show, :edit, :update, :destroy]
+  before_action :enforce_signin, except: [:index, :show]
 
   # GET /memberships
   # GET /memberships.json
