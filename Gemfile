@@ -23,6 +23,9 @@ group :production do
   gem 'rails_12factor'
 end
 
+# HTTP-requests gem
+gem 'httparty'
+
 # password gem
 gem 'bcrypt-ruby', '~> 3.1.2'
 

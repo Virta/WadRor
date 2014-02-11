@@ -14,3 +14,5 @@
 # Ignore all logfiles and tempfiles.
 /log/*.log
 /tmp
+
+# BeerAPI Key a2fa7eba06137fe8b0b8d4a55ec889e6
