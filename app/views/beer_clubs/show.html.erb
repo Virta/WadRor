@@ -9,3 +9,10 @@
 <% @beer_club.users.each do |u| %>
     <%= link_to u.username, u %>
 <% end %>
+
+<% if current_user %>
+    <%= form_for(@membership) do |f| %>
+        <%= f.hidden_field :beer_club_id %>
+        <%= f.submit value:"Join this club" %>
+    <% end %>
+<% end %>

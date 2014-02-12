@@ -12,9 +12,6 @@
   <%= @beer.brewery.name %>
 </p>
 
-<%= link_to 'Edit', edit_beer_path(@beer) %> |
-<%= link_to 'Back', beers_path %>
-
 <br>
 
 <% if @beer.ratings.empty? %>
@@ -22,3 +19,18 @@
 <% else %>
     <p> <%= @beer.name %> has <%= pluralize(@beer.ratings.count, 'rating', plural='ratings') %>, average: <%= @beer.average_rating %> </p>
 <% end %>
+
+<% if current_user %>
+    <h4>Rate this beer:</h4>
+
+    <%= form_for(@rating) do |f| %>
+        <%= f.hidden_field :beer_id %>
+        Score: <%= f.number_field :score %>
+        <%= f.submit %>
+    <% end %>
+
+    <%= link_to 'Edit', edit_beer_path(@beer) %>
+
+<% end %>
+
+<%= link_to 'Back', beers_path %>
