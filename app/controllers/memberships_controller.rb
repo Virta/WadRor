@@ -26,18 +26,20 @@ class MembershipsController < ApplicationController
   # POST /memberships
   # POST /memberships.json
   def create
+    if current_user
+      @membership = Membership.new params.require(:membership).permit(:beer_club_id)
 
-    @membership = Membership.new params.require(:membership).permit(:beer_club_id)
+      if current_user.memberships.find_by(beer_club_id:(@membership.beer_club_id))
+        @beer_clubs = BeerClub.all
+        redirect_to :back, notice: "You are already a member of that club"
+      elsif @membership.save
+        current_user.memberships << @membership
+        redirect_to beer_club_path(@membership.beer_club_id), notice: "Welcome to #{@membership.beer_club.name}!"
+      else
+        @beer_clubs = BeerClub.all
+        render :new
+      end
 
-    if current_user.memberships.find_by(beer_club_id:(@membership.beer_club_id))
-      @beer_clubs = BeerClub.all
-      redirect_to :back, notice: "You are already a member of that club"
-    elsif @membership.save
-      current_user.memberships << @membership
-      redirect_to user_path current_user
-    else
-      @beer_clubs = BeerClub.all
-      render :new
     end
 
 

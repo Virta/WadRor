@@ -10,7 +10,7 @@
     <%= link_to u.username, u %>
 <% end %>
 
-<% if current_user %>
+<% if current_user and not @beer_club.users.include?(current_user) %>
     <%= form_for(@membership) do |f| %>
         <%= f.hidden_field :beer_club_id %>
         <%= f.submit value:"Join this club" %>
