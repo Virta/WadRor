@@ -37,6 +37,6 @@ describe "BeermappingApi" do
     places.each do | place |
       expect(place.city).to eq('Helsinki')
     end
-    
+
   end
 end
