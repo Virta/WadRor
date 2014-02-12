@@ -5,7 +5,7 @@
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
     <script src='./assets/0.8.0/application.js' type='text/javascript'></script>    
     <link href='./assets/0.8.0/application.css' media='screen, projection, print' rel='stylesheet' type='text/css'>
-    <link rel="shortcut icon" type="image/png" href="./assets/0.8.0/favicon_yellow.png" />
+    <link rel="shortcut icon" type="image/png" href="./assets/0.8.0/favicon_green.png" />
     <link rel="icon" type="image/png" href="./assets/0.8.0/favicon.png" />
   </head>
   
@@ -14,27 +14,27 @@
       <img src="./assets/0.8.0/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" style="display:none;">
-      <div class="timestamp">Generated <abbr class="timeago" title="2014-02-12T10:30:16+02:00">2014-02-12T10:30:16+02:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2014-02-12T11:02:10+02:00">2014-02-12T11:02:10+02:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
         <div class="file_list_container" id="AllFiles">
   <h2>
     <span class="group_name">All Files</span>
-    (<span class="covered_percent"><span class="yellow">84.26%</span></span>
+    (<span class="covered_percent"><span class="green">93.41%</span></span>
      covered at
      <span class="covered_strength">
-       <span class="red">
-         0.93
+       <span class="green">
+         1.14
        </span>
     </span> hits/line)
   </h2>
   <a name="AllFiles"></a>
   <div>
-    <b>25</b> files in total.
-    <b>108</b> relevant lines. 
-    <span class="green"><b>91</b> lines covered</span> and
-    <span class="red"><b>17</b> lines missed </span>
+    <b>23</b> files in total.
+    <b>91</b> relevant lines. 
+    <span class="green"><b>85</b> lines covered</span> and
+    <span class="red"><b>6</b> lines missed </span>
   </div>
   <table class="file_list">
     <thead>
@@ -49,26 +49,6 @@
       </tr>
     </thead>
     <tbody>
-      
-      <tr>
-        <td class="strong"><a href="#3ce20c5783c495f5fbd3c66fa578e7346451ba77" class="src_link" title="app/controllers/application_controller.rb">app/controllers/application_controller.rb</a></td>
-        <td class="red strong">60.0 %</td>
-        <td>20</td>
-        <td>10</td>
-        <td>6</td>
-        <td>4</td>
-        <td>0.6</td>
-      </tr>
-      
-      <tr>
-        <td class="strong"><a href="#4713a993a18161df2461120f4ecde099ab5fbdc8" class="src_link" title="app/controllers/places_controller.rb">app/controllers/places_controller.rb</a></td>
-        <td class="green strong">100.0 %</td>
-        <td>13</td>
-        <td>7</td>
-        <td>7</td>
-        <td>0</td>
-        <td>1.7</td>
-      </tr>
       
       <tr>
         <td class="strong"><a href="#96e00afd0eb00c49fcf63c6f4055bc3fdd426d84" class="src_link" title="app/helpers/application_helper.rb">app/helpers/application_helper.rb</a></td>
@@ -132,12 +112,12 @@
       
       <tr>
         <td class="strong"><a href="#7636a4d608f265eabc8011574ff83993680f919d" class="src_link" title="app/models/place.rb">app/models/place.rb</a></td>
-        <td class="green strong">100.0 %</td>
+        <td class="red strong">80.0 %</td>
         <td>10</td>
         <td>5</td>
-        <td>5</td>
-        <td>0</td>
-        <td>2.0</td>
+        <td>4</td>
+        <td>1</td>
+        <td>0.8</td>
       </tr>
       
       <tr>
@@ -272,12 +252,12 @@
       
       <tr>
         <td class="strong"><a href="#8ba93d606064501e245f02003e653e7deedb2c5a" class="src_link" title="lib/beermapping_api.rb">lib/beermapping_api.rb</a></td>
-        <td class="red strong">27.27 %</td>
+        <td class="green strong">100.0 %</td>
         <td>19</td>
         <td>11</td>
-        <td>3</td>
-        <td>8</td>
-        <td>0.3</td>
+        <td>11</td>
+        <td>0</td>
+        <td>2.7</td>
       </tr>
       
       <tr>
@@ -315,240 +295,6 @@
       </div>
     
       <div class="source_files">
-      
-        <div class="source_table" id="3ce20c5783c495f5fbd3c66fa578e7346451ba77">
-  <div class="header">
-    <h3>app/controllers/application_controller.rb</h3>
-    <h4><span class="red">60.0 %</span> covered</h4>
-    <div>
-      <b>10</b> relevant lines. 
-      <span class="green"><b>6</b> lines covered</span> and
-      <span class="red"><b>4</b> lines missed.</span>
-    </div>
-  </div>
-  
-  <pre>
-    <ol>
-      
-        <li class="covered" data-hits="1" data-linenumber="1">
-          <span class="hits">1</span>
-          
-          <code class="ruby">class ApplicationController &lt; ActionController::Base</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="2">
-          
-          
-          <code class="ruby">  # Prevent CSRF attacks by raising an exception.</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="3">
-          
-          
-          <code class="ruby">  # For APIs, you may want to use :null_session instead.</code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="4">
-          <span class="hits">1</span>
-          
-          <code class="ruby">  protect_from_forgery with: :exception</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="5">
-          
-          
-          <code class="ruby"></code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="6">
-          <span class="hits">1</span>
-          
-          <code class="ruby">  helper_method :current_user</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="7">
-          
-          
-          <code class="ruby"></code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="8">
-          <span class="hits">1</span>
-          
-          <code class="ruby">  def current_user</code>
-        </li>
-      
-        <li class="missed" data-hits="0" data-linenumber="9">
-          
-          
-          <code class="ruby">    return nil if session[:user_id].nil?</code>
-        </li>
-      
-        <li class="missed" data-hits="0" data-linenumber="10">
-          
-          
-          <code class="ruby">    User.find(session[:user_id])</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="11">
-          
-          
-          <code class="ruby">  end</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="12">
-          
-          
-          <code class="ruby"></code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="13">
-          <span class="hits">1</span>
-          
-          <code class="ruby">  def enforce_signin</code>
-        </li>
-      
-        <li class="missed" data-hits="0" data-linenumber="14">
-          
-          
-          <code class="ruby">    redirect_to signin_path, notice: &#39;you have to sign in to do that&#39; if current_user.nil?</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="15">
-          
-          
-          <code class="ruby">  end</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="16">
-          
-          
-          <code class="ruby"></code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="17">
-          <span class="hits">1</span>
-          
-          <code class="ruby">  def enforce_admin_signin</code>
-        </li>
-      
-        <li class="missed" data-hits="0" data-linenumber="18">
-          
-          
-          <code class="ruby">    redirect_to :back, notice: &quot;you can&#39;t do that&quot; unless current_user.is_admin?</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="19">
-          
-          
-          <code class="ruby">  end</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="20">
-          
-          
-          <code class="ruby">end</code>
-        </li>
-      
-    </ol>
-  </pre>
-</div>
-      
-        <div class="source_table" id="4713a993a18161df2461120f4ecde099ab5fbdc8">
-  <div class="header">
-    <h3>app/controllers/places_controller.rb</h3>
-    <h4><span class="green">100.0 %</span> covered</h4>
-    <div>
-      <b>7</b> relevant lines. 
-      <span class="green"><b>7</b> lines covered</span> and
-      <span class="red"><b>0</b> lines missed.</span>
-    </div>
-  </div>
-  
-  <pre>
-    <ol>
-      
-        <li class="covered" data-hits="1" data-linenumber="1">
-          <span class="hits">1</span>
-          
-          <code class="ruby">class PlacesController &lt; ApplicationController</code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="2">
-          <span class="hits">1</span>
-          
-          <code class="ruby">  def index</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="3">
-          
-          
-          <code class="ruby">  end</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="4">
-          
-          
-          <code class="ruby"></code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="5">
-          <span class="hits">1</span>
-          
-          <code class="ruby">  def search</code>
-        </li>
-      
-        <li class="covered" data-hits="3" data-linenumber="6">
-          <span class="hits">3</span>
-          
-          <code class="ruby">    @places = BeermappingApi.places_in(params[:city])</code>
-        </li>
-      
-        <li class="covered" data-hits="3" data-linenumber="7">
-          <span class="hits">3</span>
-          
-          <code class="ruby">    if @places.empty?</code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="8">
-          <span class="hits">1</span>
-          
-          <code class="ruby">      redirect_to places_path, notice: &quot;No locations in #{params[:city]}&quot;</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="9">
-          
-          
-          <code class="ruby">    else</code>
-        </li>
-      
-        <li class="covered" data-hits="2" data-linenumber="10">
-          <span class="hits">2</span>
-          
-          <code class="ruby">      render :index</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="11">
-          
-          
-          <code class="ruby">    end</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="12">
-          
-          
-          <code class="ruby">  end</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="13">
-          
-          
-          <code class="ruby">end</code>
-        </li>
-      
-    </ol>
-  </pre>
-</div>
       
         <div class="source_table" id="96e00afd0eb00c49fcf63c6f4055bc3fdd426d84">
   <div class="header">
@@ -733,11 +479,11 @@
         <div class="source_table" id="7636a4d608f265eabc8011574ff83993680f919d">
   <div class="header">
     <h3>app/models/place.rb</h3>
-    <h4><span class="green">100.0 %</span> covered</h4>
+    <h4><span class="red">80.0 %</span> covered</h4>
     <div>
       <b>5</b> relevant lines. 
-      <span class="green"><b>5</b> lines covered</span> and
-      <span class="red"><b>0</b> lines missed.</span>
+      <span class="green"><b>4</b> lines covered</span> and
+      <span class="red"><b>1</b> lines missed.</span>
     </div>
   </div>
   
@@ -780,8 +526,8 @@
           <code class="ruby">    def self.rendered_fields</code>
         </li>
       
-        <li class="covered" data-hits="6" data-linenumber="7">
-          <span class="hits">6</span>
+        <li class="missed" data-hits="0" data-linenumber="7">
+          
           
           <code class="ruby">      [:id, :name, :status, :street, :city, :zip, :country, :overall ]</code>
         </li>
@@ -2413,11 +2159,11 @@
         <div class="source_table" id="8ba93d606064501e245f02003e653e7deedb2c5a">
   <div class="header">
     <h3>lib/beermapping_api.rb</h3>
-    <h4><span class="red">27.27 %</span> covered</h4>
+    <h4><span class="green">100.0 %</span> covered</h4>
     <div>
       <b>11</b> relevant lines. 
-      <span class="green"><b>3</b> lines covered</span> and
-      <span class="red"><b>8</b> lines missed.</span>
+      <span class="green"><b>11</b> lines covered</span> and
+      <span class="red"><b>0</b> lines missed.</span>
     </div>
   </div>
   
@@ -2436,8 +2182,8 @@
           <code class="ruby">  def self.places_in(city)</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="3">
-          
+        <li class="covered" data-hits="3" data-linenumber="3">
+          <span class="hits">3</span>
           
           <code class="ruby">    url = &quot;http://beermapping.com/webservice/loccity/#{key}/&quot;</code>
         </li>
@@ -2448,14 +2194,14 @@
           <code class="ruby"></code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="5">
-          
+        <li class="covered" data-hits="3" data-linenumber="5">
+          <span class="hits">3</span>
           
           <code class="ruby">    response = HTTParty.get &quot;#{url}#{ERB::Util.url_encode(city)}&quot;</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="6">
-          
+        <li class="covered" data-hits="3" data-linenumber="6">
+          <span class="hits">3</span>
           
           <code class="ruby">    places = response.parsed_response[&quot;bmp_locations&quot;][&quot;location&quot;]</code>
         </li>
@@ -2466,8 +2212,8 @@
           <code class="ruby"></code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="8">
-          
+        <li class="covered" data-hits="3" data-linenumber="8">
+          <span class="hits">3</span>
           
           <code class="ruby">    return [] if places.is_a?(Hash) and places[&#39;id&#39;].nil?</code>
         </li>
@@ -2478,20 +2224,20 @@
           <code class="ruby"></code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="10">
-          
+        <li class="covered" data-hits="2" data-linenumber="10">
+          <span class="hits">2</span>
           
           <code class="ruby">    places = [places] if places.is_a?(Hash)</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="11">
-          
+        <li class="covered" data-hits="2" data-linenumber="11">
+          <span class="hits">2</span>
           
           <code class="ruby">    places.inject([]) do | set, place |</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="12">
-          
+        <li class="covered" data-hits="8" data-linenumber="12">
+          <span class="hits">8</span>
           
           <code class="ruby">      set &lt;&lt; Place.new(place)</code>
         </li>
@@ -2520,8 +2266,8 @@
           <code class="ruby">  def self.key</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="17">
-          
+        <li class="covered" data-hits="3" data-linenumber="17">
+          <span class="hits">3</span>
           
           <code class="ruby">    &quot;96ce1942872335547853a0bb3b0c24db&quot;</code>
         </li>

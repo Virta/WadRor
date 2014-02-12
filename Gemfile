@@ -16,6 +16,7 @@ group :test do
   gem 'launchy'
   gem 'capybara'
   gem 'simplecov', require: false
+  gem 'webmock'
 end
 # and PostgreSQL for production Active Record
 group :production do
