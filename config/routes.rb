@@ -24,7 +24,9 @@ Ratebeer::Application.routes.draw do
 
   get 'joinaclub', to: 'memberships#new'
 
-  get 'places', to: 'places#index'
+  #get 'places', to: 'places#index'
+
+  resources :places, only: [:index, :show]
 
   post 'places', to: 'places#search'
 

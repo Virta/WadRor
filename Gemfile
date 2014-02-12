@@ -18,11 +18,14 @@ group :test do
   gem 'simplecov', require: false
   gem 'webmock'
 end
-# and PostgreSQL for production Active Record
+# PostgreSQL for production Active Record
 group :production do
   gem 'pg'
   gem 'rails_12factor'
 end
+
+# API-key db
+gem 'rails-settings-cached'
 
 # HTTP-requests gem
 gem 'httparty'

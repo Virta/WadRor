@@ -10,16 +10,44 @@
 <% if @places %>
     <table>
       <thead>
-      <% Place.rendered_fields.each do |f| %>
-          <td><%= f %></td>
-      <% end %>
+        <td><strong>Name</strong></td>
+        <td><strong>Status</strong></td>
+        <td><strong>Address</strong></td>
+        <td><strong>Zip</strong></td>
+        <td><strong>Rating</strong></td>
       </thead>
-      <% @places.each do |place| %>
+
+        <% @places.each do |place| %>
           <tr>
-            <% Place.rendered_fields.each do |f| %>
-                <td><%= place.send(f) %></td>
-            <% end %>
+          <td><%= link_to place.name, place_path(place.id) %></td>
+          <td><%= place.status %></td>
+          <td><%= place.street %></td>
+          <td><%= place.zip %></td>
+          <td><%= place.overall %></td>
           </tr>
       <% end %>
+
     </table>
+
+
+
+
+
+
+
+
+    <!--<table>-->
+      <!--<thead>-->
+      <!--<% Place.rendered_fields.each do |f| %>-->
+          <!--<td><%= f %></td>-->
+      <!--<% end %>-->
+      <!--</thead>-->
+      <!--<% @places.each do |place| %>-->
+          <!--<tr>-->
+            <!--<% Place.rendered_fields.each do |f| %>-->
+                <!--<td><%= place.send(f) %></td>-->
+            <!--<% end %>-->
+          <!--</tr>-->
+      <!--<% end %>-->
+    <!--</table>-->
 <% end %>

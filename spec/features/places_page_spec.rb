@@ -19,7 +19,7 @@ describe 'Places' do
         [ Place.new(name: 'oljenkorsi'), Place.new(name: 'kumpulan kartano'),
             Place.new(name: 'vuorenpeikko')]
     )
-
+    
     visit places_path
     fill_in('city', with: 'kumpula')
     click_button 'Search'
