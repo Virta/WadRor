@@ -4,7 +4,7 @@ describe 'Places' do
 
   it 'if one is returned by the API, it is shown on the page' do
     BeermappingApi.stub(:places_in).with('kumpula').and_return(
-        [ Place.new(name: 'oljenkorsi') ]
+        [ Place.new(name: 'oljenkorsi', id:1) ]
     )
 
     visit places_path
@@ -16,10 +16,10 @@ describe 'Places' do
 
   it 'if more than one place is returned, all are shown' do
     BeermappingApi.stub(:places_in).with('kumpula').and_return(
-        [ Place.new(name: 'oljenkorsi'), Place.new(name: 'kumpulan kartano'),
-            Place.new(name: 'vuorenpeikko')]
+        [ Place.new(name: 'oljenkorsi', id:1), Place.new(name: 'kumpulan kartano', id:2),
+            Place.new(name: 'vuorenpeikko', id:2)]
     )
-    
+
     visit places_path
     fill_in('city', with: 'kumpula')
     click_button 'Search'
