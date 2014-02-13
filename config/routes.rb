@@ -1,5 +1,7 @@
 Ratebeer::Application.routes.draw do
 
+  resources :styles
+
   resources :beer_clubs
 
   resources :memberships, only: [:new, :create, :destroy]

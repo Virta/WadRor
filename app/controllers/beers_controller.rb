@@ -31,7 +31,7 @@ class BeersController < ApplicationController
   # POST /beers
   # POST /beers.json
   def create
-    @beer = Beer.new params.require(:beer).permit(:name, :style, :brewery_id)
+    @beer = Beer.new params.require(:beer).permit(:name, :style_id, :brewery_id)
     if @beer.save
       redirect_to @beer
     else
@@ -78,6 +78,6 @@ class BeersController < ApplicationController
 
   def set_breweries_and_styles
     @breweries = Brewery.all
-    @styles = ["Weizen", "Lager", "Pale ale", "IPA", "Porter"]
+    @styles = Style.all
   end
 end
