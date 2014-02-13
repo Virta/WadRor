@@ -20,6 +20,8 @@ describe "Beer" do
     sign_in(username: 'Teuvo', password: 'SadastaN0llaan')
 
     FactoryGirl.create(:brewery)
+    FactoryGirl.create(:style)
+
     visit new_beer_path
     fill_in('beer[name]', with:'Jekku olut')
     click_button('Create Beer')

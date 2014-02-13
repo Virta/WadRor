@@ -21,7 +21,7 @@ class User < ActiveRecord::Base
 
   def favourite_style
     return nil if ratings.empty?
-    styles_interrogate(["Weizen", "Lager", "Pale ale", "IPA", "Porter"])
+    styles_interrogate
   end
 
   def favourite_brewery
@@ -41,11 +41,11 @@ class User < ActiveRecord::Base
     brewery
   end
 
-  def styles_interrogate(styles)
+  def styles_interrogate
     highest = 0.0
-    style = ''
-    styles.each do |s|
-      if (candidate = average(Rating.all.select{ |r| r.beer.style == s })) > highest
+    style = nil
+    Style.all.each do |s|
+      if (candidate = average(ratings.select{ |r| r.beer.style == s })) > highest
         highest = candidate
         style = s
       end

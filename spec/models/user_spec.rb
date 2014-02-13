@@ -96,17 +96,21 @@ describe User do
     end
 
     it "returns correct style when user has only one rating" do
-      beer = FactoryGirl.create(:beer, style:"Lager")
+      style = FactoryGirl.create(:style)
+      beer = FactoryGirl.create(:beer, style:style)
       FactoryGirl.create(:rating, beer:beer, user:user)
 
-      expect(user.favourite_style).to eq("Lager")
+      expect(user.favourite_style).to eq(style)
     end
 
     it "returns correct style when user has multiple ratings" do
-      create_many_beers_with_style(1, 2, 3, "Lager", user)
-      create_many_beers_with_style(13, 14, 15, "IPA", user)
+      style1 = Style.create name:"Lager", description:'N/A'
+      style2 = Style.create name:"IPA", description:'N/A'
 
-      expect(user.favourite_style).to eq("IPA")
+      create_many_beers_with_style(1, 2, 3, style1, user)
+      create_many_beers_with_style(13, 14, 15, style2, user)
+
+      expect(user.favourite_style).to eq(style2)
     end
   end
 
@@ -136,7 +140,9 @@ describe User do
   end
 
   def create_beer_with_rating(score, user)
-    beer = FactoryGirl.create(:beer)
+    style = FactoryGirl.create(:style)
+    brewery = FactoryGirl.create(:brewery)
+    beer = FactoryGirl.create(:beer, style:style, brewery:brewery)
     FactoryGirl.create(:rating, score:score, beer:beer, user:user)
     beer
   end
@@ -156,7 +162,8 @@ describe User do
 
   def create_custom_beer_with_rating(score, brewery_name, user)
     brewery = FactoryGirl.create(:brewery, name:brewery_name)
-    beer = FactoryGirl.create(:beer, brewery:brewery)
+    style = FactoryGirl.create(:style)
+    beer = FactoryGirl.create(:beer, brewery:brewery, style:style)
     FactoryGirl.create(:rating, score:score, beer:beer, user:user)
   end
 

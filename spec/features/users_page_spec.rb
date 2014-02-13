@@ -4,8 +4,10 @@ include OWnTestHelper
 describe "User" do
 
   let!(:brewery) { FactoryGirl.create :brewery, name:"Koff" }
-  let!(:beer1) { FactoryGirl.create :beer, name:"iso 3", brewery:brewery }
-  let!(:beer2) { FactoryGirl.create :beer, name:"Karhu", brewery:brewery }
+  let!(:style1) { FactoryGirl.create :style, name:"Lager", description:'N/A' }
+  let!(:style2) { FactoryGirl.create :style, name:"IPA", description:'N/A' }
+  let!(:beer1) { FactoryGirl.create :beer, name:"iso 3", brewery:brewery, style:style1 }
+  let!(:beer2) { FactoryGirl.create :beer, name:"Karhu", brewery:brewery, style:style2 }
   let!(:user) { FactoryGirl.create :user }
 
   describe "who has signed up" do
