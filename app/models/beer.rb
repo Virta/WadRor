@@ -7,8 +7,7 @@ class Beer < ActiveRecord::Base
 
   include RatingAverage
 
-  validates :name, length: { minimum: 3 }
-  validates :old_style, length: { minimum: 2 }
+  validates :name, length: { minimum: 3 }, :uniqueness => true
 
   def to_s
     "#{(Brewery.find_by id:brewery_id).name}: #{name}"

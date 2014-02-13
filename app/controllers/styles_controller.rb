@@ -10,6 +10,7 @@ class StylesController < ApplicationController
   # GET /styles/1
   # GET /styles/1.json
   def show
+    @beers = Beer.all.select{ |b| b.style == @style }
   end
 
   # GET /styles/new
@@ -24,15 +25,17 @@ class StylesController < ApplicationController
   # POST /styles
   # POST /styles.json
   def create
-    @style = Style.new(style_params)
+    if current_user and current_user.is_admin?
+      @style = Style.new(style_params)
 
-    respond_to do |format|
-      if @style.save
-        format.html { redirect_to @style, notice: 'Style was successfully created.' }
-        format.json { render action: 'show', status: :created, location: @style }
-      else
-        format.html { render action: 'new' }
-        format.json { render json: @style.errors, status: :unprocessable_entity }
+      respond_to do |format|
+        if @style.save
+          format.html { redirect_to @style, notice: 'Style was successfully created.' }
+          format.json { render action: 'show', status: :created, location: @style }
+        else
+          format.html { render action: 'new' }
+          format.json { render json: @style.errors, status: :unprocessable_entity }
+        end
       end
     end
   end
@@ -40,13 +43,15 @@ class StylesController < ApplicationController
   # PATCH/PUT /styles/1
   # PATCH/PUT /styles/1.json
   def update
-    respond_to do |format|
-      if @style.update(style_params)
-        format.html { redirect_to @style, notice: 'Style was successfully updated.' }
-        format.json { head :no_content }
-      else
-        format.html { render action: 'edit' }
-        format.json { render json: @style.errors, status: :unprocessable_entity }
+    if current_user and current_user.is_admin?
+      respond_to do |format|
+        if @style.update(style_params)
+          format.html { redirect_to @style, notice: 'Style was successfully updated.' }
+          format.json { head :no_content }
+        else
+          format.html { render action: 'edit' }
+          format.json { render json: @style.errors, status: :unprocessable_entity }
+        end
       end
     end
   end
@@ -54,10 +59,13 @@ class StylesController < ApplicationController
   # DELETE /styles/1
   # DELETE /styles/1.json
   def destroy
-    @style.destroy
-    respond_to do |format|
-      format.html { redirect_to styles_url }
-      format.json { head :no_content }
+    if current_user and current_user.is_admin?
+      Beer.all.select{ |b| b.style =@style }.each{ |b| b.destroy }
+      @style.destroy
+      respond_to do |format|
+        format.html { redirect_to styles_url }
+        format.json { head :no_content }
+      end
     end
   end
 

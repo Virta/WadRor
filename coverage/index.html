@@ -14,27 +14,27 @@
       <img src="./assets/0.8.0/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" style="display:none;">
-      <div class="timestamp">Generated <abbr class="timeago" title="2014-02-13T10:50:04+02:00">2014-02-13T10:50:04+02:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2014-02-13T11:15:25+02:00">2014-02-13T11:15:25+02:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
         <div class="file_list_container" id="AllFiles">
   <h2>
     <span class="group_name">All Files</span>
-    (<span class="covered_percent"><span class="red">66.41%</span></span>
+    (<span class="covered_percent"><span class="red">66.82%</span></span>
      covered at
      <span class="covered_strength">
        <span class="red">
-         0.92
+         0.91
        </span>
     </span> hits/line)
   </h2>
   <a name="AllFiles"></a>
   <div>
     <b>47</b> files in total.
-    <b>643</b> relevant lines. 
-    <span class="green"><b>427</b> lines covered</span> and
-    <span class="red"><b>216</b> lines missed </span>
+    <b>642</b> relevant lines. 
+    <span class="green"><b>429</b> lines covered</span> and
+    <span class="red"><b>213</b> lines missed </span>
   </div>
   <table class="file_list">
     <thead>
@@ -57,7 +57,7 @@
         <td>10</td>
         <td>9</td>
         <td>1</td>
-        <td>6.9</td>
+        <td>6.5</td>
       </tr>
       
       <tr>
@@ -72,11 +72,11 @@
       
       <tr>
         <td class="strong"><a href="#8e048f9182d509dacd70d05e11c2287e46c2bc12" class="src_link" title="app/controllers/beers_controller.rb">app/controllers/beers_controller.rb</a></td>
-        <td class="red strong">58.54 %</td>
+        <td class="red strong">68.29 %</td>
         <td>83</td>
         <td>41</td>
-        <td>24</td>
-        <td>17</td>
+        <td>28</td>
+        <td>13</td>
         <td>0.9</td>
       </tr>
       
@@ -202,10 +202,10 @@
       
       <tr>
         <td class="strong"><a href="#9c22deb43a46982cc928c99e11eb30ae67d46553" class="src_link" title="app/models/beer.rb">app/models/beer.rb</a></td>
-        <td class="green strong">90.91 %</td>
-        <td>17</td>
-        <td>11</td>
+        <td class="yellow strong">90.0 %</td>
+        <td>16</td>
         <td>10</td>
+        <td>9</td>
         <td>1</td>
         <td>0.9</td>
       </tr>
@@ -482,12 +482,12 @@
       
       <tr>
         <td class="strong"><a href="#5367cfef01846160d276e1bcc63414828956c139" class="src_link" title="spec/models/beer_spec.rb">spec/models/beer_spec.rb</a></td>
-        <td class="red strong">71.43 %</td>
+        <td class="red strong">64.29 %</td>
         <td>26</td>
         <td>14</td>
-        <td>10</td>
-        <td>4</td>
-        <td>0.7</td>
+        <td>9</td>
+        <td>5</td>
+        <td>0.6</td>
       </tr>
       
       <tr>
@@ -598,14 +598,14 @@
           <code class="ruby">  def current_user</code>
         </li>
       
-        <li class="covered" data-hits="37" data-linenumber="9">
-          <span class="hits">37</span>
+        <li class="covered" data-hits="35" data-linenumber="9">
+          <span class="hits">35</span>
           
           <code class="ruby">    return nil if session[:user_id].nil?</code>
         </li>
       
-        <li class="covered" data-hits="22" data-linenumber="10">
-          <span class="hits">22</span>
+        <li class="covered" data-hits="20" data-linenumber="10">
+          <span class="hits">20</span>
           
           <code class="ruby">    User.find(session[:user_id])</code>
         </li>
@@ -1187,11 +1187,11 @@
         <div class="source_table" id="8e048f9182d509dacd70d05e11c2287e46c2bc12">
   <div class="header">
     <h3>app/controllers/beers_controller.rb</h3>
-    <h4><span class="red">58.54 %</span> covered</h4>
+    <h4><span class="red">68.29 %</span> covered</h4>
     <div>
       <b>41</b> relevant lines. 
-      <span class="green"><b>24</b> lines covered</span> and
-      <span class="red"><b>17</b> lines missed.</span>
+      <span class="green"><b>28</b> lines covered</span> and
+      <span class="red"><b>13</b> lines missed.</span>
     </div>
   </div>
   
@@ -1288,14 +1288,14 @@
           <code class="ruby">  def show</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="16">
-          
+        <li class="covered" data-hits="1" data-linenumber="16">
+          <span class="hits">1</span>
           
           <code class="ruby">    @rating = Rating.new</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="17">
-          
+        <li class="covered" data-hits="1" data-linenumber="17">
+          <span class="hits">1</span>
           
           <code class="ruby">    @rating.beer = @beer</code>
         </li>
@@ -1408,8 +1408,8 @@
           <code class="ruby">    if @beer.save</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="36">
-          
+        <li class="covered" data-hits="1" data-linenumber="36">
+          <span class="hits">1</span>
           
           <code class="ruby">      redirect_to @beer</code>
         </li>
@@ -1420,14 +1420,14 @@
           <code class="ruby">    else</code>
         </li>
       
-        <li class="covered" data-hits="2" data-linenumber="38">
-          <span class="hits">2</span>
+        <li class="covered" data-hits="1" data-linenumber="38">
+          <span class="hits">1</span>
           
           <code class="ruby">      set_breweries_and_styles</code>
         </li>
       
-        <li class="covered" data-hits="2" data-linenumber="39">
-          <span class="hits">2</span>
+        <li class="covered" data-hits="1" data-linenumber="39">
+          <span class="hits">1</span>
           
           <code class="ruby">      render :new</code>
         </li>
@@ -1618,8 +1618,8 @@
           <code class="ruby">    def set_beer</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="71">
-          
+        <li class="covered" data-hits="1" data-linenumber="71">
+          <span class="hits">1</span>
           
           <code class="ruby">      @beer = Beer.find(params[:id])</code>
         </li>
@@ -1651,7 +1651,7 @@
         <li class="missed" data-hits="0" data-linenumber="76">
           
           
-          <code class="ruby">      params.require(:beer).permit(:name, :style, :brewery_id)</code>
+          <code class="ruby">      params.require(:beer).permit(:name, :style_id, :brewery_id)</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="77">
@@ -1672,14 +1672,14 @@
           <code class="ruby">  def set_breweries_and_styles</code>
         </li>
       
-        <li class="covered" data-hits="4" data-linenumber="80">
-          <span class="hits">4</span>
+        <li class="covered" data-hits="3" data-linenumber="80">
+          <span class="hits">3</span>
           
           <code class="ruby">    @breweries = Brewery.all</code>
         </li>
       
-        <li class="covered" data-hits="4" data-linenumber="81">
-          <span class="hits">4</span>
+        <li class="covered" data-hits="3" data-linenumber="81">
+          <span class="hits">3</span>
           
           <code class="ruby">    @styles = Style.all</code>
         </li>
@@ -3935,10 +3935,10 @@
         <div class="source_table" id="9c22deb43a46982cc928c99e11eb30ae67d46553">
   <div class="header">
     <h3>app/models/beer.rb</h3>
-    <h4><span class="green">90.91 %</span> covered</h4>
+    <h4><span class="yellow">90.0 %</span> covered</h4>
     <div>
-      <b>11</b> relevant lines. 
-      <span class="green"><b>10</b> lines covered</span> and
+      <b>10</b> relevant lines. 
+      <span class="green"><b>9</b> lines covered</span> and
       <span class="red"><b>1</b> lines missed.</span>
     </div>
   </div>
@@ -4003,46 +4003,40 @@
         <li class="covered" data-hits="1" data-linenumber="10">
           <span class="hits">1</span>
           
-          <code class="ruby">  validates :name, length: { minimum: 3 }</code>
+          <code class="ruby">  validates :name, length: { minimum: 3 }, :uniqueness =&gt; true</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="11">
-          <span class="hits">1</span>
-          
-          <code class="ruby">  validates :old_style, length: { minimum: 2 }</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="12">
+        <li class="never" data-hits="" data-linenumber="11">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="13">
+        <li class="covered" data-hits="1" data-linenumber="12">
           <span class="hits">1</span>
           
           <code class="ruby">  def to_s</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="14">
+        <li class="missed" data-hits="0" data-linenumber="13">
           
           
           <code class="ruby">    &quot;#{(Brewery.find_by id:brewery_id).name}: #{name}&quot;</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="15">
+        <li class="never" data-hits="" data-linenumber="14">
           
           
           <code class="ruby">  end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="16">
+        <li class="never" data-hits="" data-linenumber="15">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="17">
+        <li class="never" data-hits="" data-linenumber="16">
           
           
           <code class="ruby">end</code>
@@ -8369,11 +8363,11 @@
         <div class="source_table" id="5367cfef01846160d276e1bcc63414828956c139">
   <div class="header">
     <h3>spec/models/beer_spec.rb</h3>
-    <h4><span class="red">71.43 %</span> covered</h4>
+    <h4><span class="red">64.29 %</span> covered</h4>
     <div>
       <b>14</b> relevant lines. 
-      <span class="green"><b>10</b> lines covered</span> and
-      <span class="red"><b>4</b> lines missed.</span>
+      <span class="green"><b>9</b> lines covered</span> and
+      <span class="red"><b>5</b> lines missed.</span>
     </div>
   </div>
   
@@ -8512,8 +8506,8 @@
           <code class="ruby">    expect(beer).not_to be_valid</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="23">
-          <span class="hits">1</span>
+        <li class="missed" data-hits="0" data-linenumber="23">
+          
           
           <code class="ruby">    expect(Beer.count).to eq(0)</code>
         </li>
