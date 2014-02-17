@@ -1,7 +1,7 @@
 class BeersController < ApplicationController
   before_action :set_beer, only: [:show, :edit, :update, :destroy]
   before_action :current_user, only: [:new, :create, :edit]
-  before_action :enforce_signin, except: [:index, :show]
+  before_action :enforce_signin, only: [:new]
   before_action :enforce_admin_signin, only:[:destroy, :edit]
 
   # GET /beers
@@ -16,6 +16,12 @@ class BeersController < ApplicationController
       when 'brewery' then @beers.sort_by!{ |b| b.brewery }
       when 'style' then @beers.sort_by!{ |b| b.style }
     end
+  end
+
+  def list
+  end
+
+  def nglist
   end
 
   # GET /beers/1

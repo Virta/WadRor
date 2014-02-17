@@ -33,6 +33,9 @@ gem 'httparty'
 # password gem
 gem 'bcrypt-ruby', '~> 3.1.2'
 
+# Jquery for dynamic content
+gem 'jquery-turbolinks'
+
 # use debugger
 gem 'debugger', group: [:development, :test]
 
