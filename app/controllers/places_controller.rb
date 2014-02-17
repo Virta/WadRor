@@ -16,9 +16,12 @@ class PlacesController < ApplicationController
 
   def show
     places = BeermappingApi.places_in(session[:city])
-    places.each do |p|
-      @place = p if p.id == params[:id]
-    end
+    @place = places.select{ |p| p.id == params[:id] }.first
+
+    #places.each do |p|
+    #  @place = p if p.id == params[:id]
+    #end
+
     unless @place
       redirect_to places_path, notice: "No information on that place"
     end
