@@ -9,9 +9,13 @@
     <% if @brewery.active? %>
         still in the game!
     <% else %>
-        retired old man.
+        a retired old brewery.
   <% end %>
 </p>
+<%= link_to 'Retire', toggle_activity_brewery_path(@brewery.id), method: :post, class:'btn btn-primary' if current_user.is_admin? if current_user%>
+
+<br>
+<br>
 
 <p>
   <% @brewery.beers.each do |beer| %>
@@ -27,6 +31,8 @@
 <% else %>
     <p> <%= @brewery.name %> has <%= pluralize(@brewery.ratings.count, 'rating', plural='ratings') %>, average: <%= @brewery.average_rating %></p>
 <% end %>
+
+<br>
 <br>
 
 <%= edit_and_destroy_buttons(@brewery) %>
