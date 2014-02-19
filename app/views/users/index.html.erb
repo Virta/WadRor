@@ -6,9 +6,6 @@
     <% @users.each do |user| %>
       <tr>
         <td><%= link_to user.username, user %></td>
-        <td><%= link_to 'Destroy', user, method: :delete, data:
-                { confirm: 'Are you sure?' } if current_user.is_admin? if current_user%>
-        </td>
       </tr>
     <% end %>
   </tbody>
@@ -16,4 +13,4 @@
 
 <br>
 
-<%= link_to 'New User', new_user_path , class:'btn btn-primary'unless current_user %>
+<%= link_to 'New User', new_user_path , class:'btn btn-primary' unless current_user %>

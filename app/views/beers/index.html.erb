@@ -8,8 +8,7 @@
       <th> <%= link_to 'Name', beers_path(order:'name') %> </th>
       <th> <%= link_to 'Style', beers_path(order:'style') %> </th>
       <th> <%= link_to 'Brewery', beers_path(order:'brewery') %> </th>
-      <th></th>
-      <th></th>
+      <th> Average rating </th>
     </tr>
   </thead>
 
@@ -19,6 +18,7 @@
         <td><%= link_to beer.name, beer %></td>
         <td><%= link_to beer.style.name, beer.style %></td>
         <td><%= link_to beer.brewery.name, beer.brewery %></td>
+        <td><%= round(beer.average_rating) %></td>
       </tr>
     <% end %>
   </tbody>

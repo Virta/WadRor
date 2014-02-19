@@ -71,7 +71,7 @@
   <% @recent_ratings.each do |rating| %>
       <tr>
         <td>
-          <%= link_to rating.beer.name, rating.beer %>: <%= rating.score %> by <%= link_to rating.user.username, user_path(rating.user_id) %>
+          <%= link_to rating.beer.name, rating.beer %>: <%= round(rating.score) %> by <%= link_to rating.user.username, user_path(rating.user_id) %>
         </td>
       </tr>
   <% end %>

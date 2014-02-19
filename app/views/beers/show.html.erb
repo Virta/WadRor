@@ -17,7 +17,7 @@
 <% if @beer.ratings.empty? %>
     <p> <%= @beer.name %> has not been rated!</p>
 <% else %>
-    <p> <%= @beer.name %> has <%= pluralize(@beer.ratings.count, 'rating', plural='ratings') %>, average: <%= @beer.average_rating %> </p>
+    <p> <%= @beer.name %> has <%= pluralize(@beer.ratings.count, 'rating', plural='ratings') %>, average: <%= round(@beer.average_rating) %> </p>
 <% end %>
 
 <% if current_user %>
@@ -29,8 +29,8 @@
         <%= f.submit %>
     <% end %>
 
-    <%= link_to 'Edit', edit_beer_path(@beer) %>
-
 <% end %>
 
-<%= link_to 'Back', beers_path %>
+<br>
+<br>
+<%= edit_and_destroy_buttons(@beer) %>
