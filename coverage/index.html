@@ -14,27 +14,27 @@
       <img src="./assets/0.8.0/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" style="display:none;">
-      <div class="timestamp">Generated <abbr class="timeago" title="2014-02-19T18:44:28+02:00">2014-02-19T18:44:28+02:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2014-02-19T19:13:11+02:00">2014-02-19T19:13:11+02:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
         <div class="file_list_container" id="AllFiles">
   <h2>
     <span class="group_name">All Files</span>
-    (<span class="covered_percent"><span class="yellow">83.49%</span></span>
+    (<span class="covered_percent"><span class="yellow">83.13%</span></span>
      covered at
      <span class="covered_strength">
        <span class="green">
-         2.24
+         2.32
        </span>
     </span> hits/line)
   </h2>
   <a name="AllFiles"></a>
   <div>
     <b>49</b> files in total.
-    <b>733</b> relevant lines. 
-    <span class="green"><b>612</b> lines covered</span> and
-    <span class="red"><b>121</b> lines missed </span>
+    <b>741</b> relevant lines. 
+    <span class="green"><b>616</b> lines covered</span> and
+    <span class="red"><b>125</b> lines missed </span>
   </div>
   <table class="file_list">
     <thead>
@@ -57,7 +57,7 @@
         <td>10</td>
         <td>9</td>
         <td>1</td>
-        <td>16.7</td>
+        <td>22.4</td>
       </tr>
       
       <tr>
@@ -142,12 +142,12 @@
       
       <tr>
         <td class="strong"><a href="#96e00afd0eb00c49fcf63c6f4055bc3fdd426d84" class="src_link" title="app/helpers/application_helper.rb">app/helpers/application_helper.rb</a></td>
-        <td class="green strong">100.0 %</td>
-        <td>2</td>
-        <td>1</td>
-        <td>1</td>
-        <td>0</td>
-        <td>1.0</td>
+        <td class="red strong">55.56 %</td>
+        <td>15</td>
+        <td>9</td>
+        <td>5</td>
+        <td>4</td>
+        <td>2.1</td>
       </tr>
       
       <tr>
@@ -618,14 +618,14 @@
           <code class="ruby">  def current_user</code>
         </li>
       
-        <li class="covered" data-hits="79" data-linenumber="9">
-          <span class="hits">79</span>
+        <li class="covered" data-hits="108" data-linenumber="9">
+          <span class="hits">108</span>
           
           <code class="ruby">    return nil if session[:user_id].nil?</code>
         </li>
       
-        <li class="covered" data-hits="75" data-linenumber="10">
-          <span class="hits">75</span>
+        <li class="covered" data-hits="103" data-linenumber="10">
+          <span class="hits">103</span>
           
           <code class="ruby">    User.find(session[:user_id])</code>
         </li>
@@ -4165,11 +4165,11 @@
         <div class="source_table" id="96e00afd0eb00c49fcf63c6f4055bc3fdd426d84">
   <div class="header">
     <h3>app/helpers/application_helper.rb</h3>
-    <h4><span class="green">100.0 %</span> covered</h4>
+    <h4><span class="red">55.56 %</span> covered</h4>
     <div>
-      <b>1</b> relevant lines. 
-      <span class="green"><b>1</b> lines covered</span> and
-      <span class="red"><b>0</b> lines missed.</span>
+      <b>9</b> relevant lines. 
+      <span class="green"><b>5</b> lines covered</span> and
+      <span class="red"><b>4</b> lines missed.</span>
     </div>
   </div>
   
@@ -4182,7 +4182,85 @@
           <code class="ruby">module ApplicationHelper</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="2">
+        <li class="covered" data-hits="1" data-linenumber="2">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  def edit_and_destroy_buttons(item)</code>
+        </li>
+      
+        <li class="covered" data-hits="15" data-linenumber="3">
+          <span class="hits">15</span>
+          
+          <code class="ruby">    if current_user and current_user.is_admin?</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="4">
+          
+          
+          <code class="ruby">      notice = &quot;Admin:&quot;</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="5">
+          
+          
+          <code class="ruby">      edit = link_to(&#39;Edit&#39;, url_for([:edit, item]), class:&quot;btn btn-primary&quot;)</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="6">
+          
+          
+          <code class="ruby">      del = link_to(&#39;Destroy&#39;, item, method: :delete,</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="7">
+          
+          
+          <code class="ruby">                    data: {confirm: &#39;Are you sure?&#39; }, class:&quot;btn btn-danger&quot;)</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="8">
+          
+          
+          <code class="ruby">      raw(&quot;#{notice} #{edit} #{del}&quot;)</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="9">
+          
+          
+          <code class="ruby">    end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="10">
+          
+          
+          <code class="ruby">  end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="11">
+          
+          
+          <code class="ruby">  </code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="12">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  def round(param)</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="13">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    number_with_precision param, precision: 3, significant: true, strip_insignificant_zeros: true</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="14">
+          
+          
+          <code class="ruby">  end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="15">
           
           
           <code class="ruby">end</code>

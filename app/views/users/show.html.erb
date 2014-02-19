@@ -40,6 +40,6 @@
 
 <br>
 <br>
-<% if current_user == @user or current_user.is_admin? %>
+<% if current_user == @user %>
     <%= edit_and_destroy_buttons(@user) %>
 <% end %>

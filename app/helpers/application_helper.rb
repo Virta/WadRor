@@ -1,6 +1,6 @@
 module ApplicationHelper
   def edit_and_destroy_buttons(item)
-    unless current_user.nil? and current_user.is_admin?
+    if current_user and current_user.is_admin?
       notice = "Admin:"
       edit = link_to('Edit', url_for([:edit, item]), class:"btn btn-primary")
       del = link_to('Destroy', item, method: :delete,
