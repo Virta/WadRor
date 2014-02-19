@@ -2,9 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="39cbafec-e20b-4325-a860-b12b258489e6" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/coverage/.resultset.json" afterPath="$PROJECT_DIR$/coverage/.resultset.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/spec/features/beerlist_page_spec.rb" afterPath="$PROJECT_DIR$/spec/features/beerlist_page_spec.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/coverage/index.html" afterPath="$PROJECT_DIR$/coverage/index.html" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/application.css" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Gemfile.lock" afterPath="$PROJECT_DIR$/Gemfile.lock" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Gemfile" afterPath="$PROJECT_DIR$/Gemfile" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/layouts/application.html.erb" afterPath="$PROJECT_DIR$/app/views/layouts/application.html.erb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/assets/javascripts/application.js" afterPath="$PROJECT_DIR$/app/assets/javascripts/application.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/ratebeer.iml" afterPath="$PROJECT_DIR$/.idea/ratebeer.iml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="ratebeer.iws" />
@@ -31,31 +34,6 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="beers_controller.rb" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/controllers/beers_controller.rb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="24" column="5" selection-start="623" selection-end="623" vertical-scroll-proportion="0.0" vertical-offset="360" max-vertical-offset="1545">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="nglist.html" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/views/beers/nglist.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="36" column="6" selection-start="0" selection-end="1034" vertical-scroll-proportion="0.0" vertical-offset="540" max-vertical-offset="630">
-              <folding>
-                <marker date="1392626598017" expanded="true" signature="95:468" placeholder="..." />
-                <marker date="1392626598017" expanded="true" signature="141:459" placeholder="{...}" />
-                <marker date="1392626598017" expanded="true" signature="530:1033" placeholder="..." />
-                <marker date="1392626598017" expanded="true" signature="586:1025" placeholder="..." />
-                <marker date="1392626598017" expanded="true" signature="602:805" placeholder="..." />
-                <marker date="1392626598017" expanded="true" signature="879:1012" placeholder="..." />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="nglist.html" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/views/breweries/nglist.html">
           <provider selected="true" editor-type-id="text-editor">
@@ -83,15 +61,6 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="breweries_controller.rb" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/controllers/breweries_controller.rb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="17" column="0" selection-start="539" selection-end="539" vertical-scroll-proportion="0.0" vertical-offset="255" max-vertical-offset="1575">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="routes.rb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/config/routes.rb">
           <provider selected="true" editor-type-id="text-editor">
@@ -101,10 +70,19 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="beerlist_page_spec.rb" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="beerlist_page_spec.rb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/spec/features/beerlist_page_spec.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="58" column="73" selection-start="2066" selection-end="2066" vertical-scroll-proportion="0.8742138" vertical-offset="36" max-vertical-offset="990">
+            <state line="58" column="73" selection-start="2066" selection-end="2066" vertical-scroll-proportion="0.0" vertical-offset="36" max-vertical-offset="990">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name=".travis.yml" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/.travis.yml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="330">
               <folding />
             </state>
           </provider>
@@ -122,7 +100,28 @@
       <file leaf-file-name="Gemfile" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Gemfile">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="42" column="32" selection-start="894" selection-end="894" vertical-scroll-proportion="0.0" vertical-offset="274" max-vertical-offset="1350">
+            <state line="76" column="18" selection-start="1784" selection-end="1784" vertical-scroll-proportion="0.0" vertical-offset="381" max-vertical-offset="1440">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="application.html.erb" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/views/layouts/application.html.erb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="17" column="11" selection-start="672" selection-end="672" vertical-scroll-proportion="-10.625" vertical-offset="0" max-vertical-offset="390">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="copy_of_application.html.erb" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/views/layouts/copy_of_application.html.erb">
+          <provider editor-type-id="com.intellij.persistence.database.editor.CsvTableFileEditorProvider">
+            <state />
+          </provider>
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="928">
               <folding />
             </state>
           </provider>
@@ -190,8 +189,8 @@
         <option value="$PROJECT_DIR$/app/views/breweries/nglist.html" />
         <option value="$PROJECT_DIR$/app/views/breweries/index.json.jbuilder" />
         <option value="$PROJECT_DIR$/config/routes.rb" />
-        <option value="$PROJECT_DIR$/Gemfile" />
         <option value="$PROJECT_DIR$/spec/features/beerlist_page_spec.rb" />
+        <option value="$PROJECT_DIR$/Gemfile" />
       </list>
     </option>
   </component>
@@ -465,6 +464,28 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="memberships" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ratebeer" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ratebeer" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="layouts" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -875,20 +896,6 @@
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/db/migrate/20140128092804_add_ratings_foreign_key_to_user.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="923">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/db/migrate/20140130082111_add_password_digest_to_user.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="5" column="0" selection-start="128" selection-end="128" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="165">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/db/migrate/20140213081230_add_style_foreign_key_to_beer.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state line="2" column="33" selection-start="103" selection-end="103" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="165">
@@ -934,11 +941,6 @@
     <entry file="file://$PROJECT_DIR$/app/views/styles/new.html.erb">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="967" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/layouts/application.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="17" column="30" selection-start="561" selection-end="561" vertical-scroll-proportion="-10.625" vertical-offset="0" max-vertical-offset="630" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/controllers/styles_controller.rb">
@@ -1112,12 +1114,12 @@
       <provider selected="true" editor-type-id="text-editor">
         <state line="36" column="6" selection-start="0" selection-end="1034" vertical-scroll-proportion="0.0" vertical-offset="540" max-vertical-offset="630">
           <folding>
-            <marker date="1392626598017" expanded="true" signature="95:468" placeholder="..." />
-            <marker date="1392626598017" expanded="true" signature="141:459" placeholder="{...}" />
-            <marker date="1392626598017" expanded="true" signature="530:1033" placeholder="..." />
-            <marker date="1392626598017" expanded="true" signature="586:1025" placeholder="..." />
-            <marker date="1392626598017" expanded="true" signature="602:805" placeholder="..." />
-            <marker date="1392626598017" expanded="true" signature="879:1012" placeholder="..." />
+            <marker date="1392626598017" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1392626598017" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1392626598017" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1392626598017" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1392626598017" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1392626598017" expanded="true" signature="-1:-1" placeholder="..." />
           </folding>
         </state>
       </provider>
@@ -1157,13 +1159,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Gemfile">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="42" column="32" selection-start="894" selection-end="894" vertical-scroll-proportion="0.0" vertical-offset="274" max-vertical-offset="1350">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/spec/spec_helper.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="967">
@@ -1173,7 +1168,38 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/spec/features/beerlist_page_spec.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="58" column="73" selection-start="2066" selection-end="2066" vertical-scroll-proportion="0.8742138" vertical-offset="36" max-vertical-offset="990">
+        <state line="58" column="73" selection-start="2066" selection-end="2066" vertical-scroll-proportion="0.0" vertical-offset="36" max-vertical-offset="990">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.travis.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="954">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Gemfile">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="76" column="18" selection-start="1784" selection-end="1784" vertical-scroll-proportion="0.0" vertical-offset="381" max-vertical-offset="1440">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/layouts/application.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="17" column="11" selection-start="672" selection-end="672" vertical-scroll-proportion="-10.625" vertical-offset="0" max-vertical-offset="390">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/layouts/copy_of_application.html.erb">
+      <provider editor-type-id="com.intellij.persistence.database.editor.CsvTableFileEditorProvider">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="906">
           <folding />
         </state>
       </provider>

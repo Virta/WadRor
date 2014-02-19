@@ -71,6 +71,12 @@ group :doc do
   gem 'sdoc', require: false
 end
 
+# use twitter-bootstrap
+gem 'bootstrap-sass'
+group :development do
+  gem 'rails_layout'
+end
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.1.2'
 
