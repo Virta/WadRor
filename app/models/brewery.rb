@@ -8,6 +8,9 @@ class Brewery < ActiveRecord::Base
   validates :year, numericality: {  greater_than_or_equal_to: 1042,
                                     less_than_or_equal_to: Date.today.year }
 
+  scope :active, -> { where active: true}
+  scope :inactive, -> {where active: [nil, false]}
+
   #def average_rating
   #  if ratings.count > 0
   #    sum = 0.0

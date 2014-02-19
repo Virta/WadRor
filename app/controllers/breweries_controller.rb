@@ -7,8 +7,8 @@ class BreweriesController < ApplicationController
   # GET /breweries
   # GET /breweries.json
   def index
-    @active_breweries = Brewery.where(active: true)
-    @inactive_breweries = Brewery.where(active: [nil, false])
+    @active_breweries = Brewery.active
+    @inactive_breweries = Brewery.inactive
 
     order = params[:order] || 'name'
 

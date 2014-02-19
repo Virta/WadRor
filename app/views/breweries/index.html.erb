@@ -5,46 +5,14 @@
 <h2>Active breweries: </h2>
 <p> Number of active breweries: <%= @active_breweries.count %> </p>
 
-<table class="table table-striped">
-  <thead>
-    <tr>
-      <th><%= link_to 'Name', breweries_path(order:"name") %></th>
-      <th><%= link_to 'Year', breweries_path(order:"year") %></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @active_breweries.each do |brewery| %>
-      <tr>
-        <td><%= link_to brewery.name, brewery %></td>
-        <td><%= brewery.year %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+<%= render 'list', breweries: @active_breweries %>
 
 <br>
 
 <h2>Inactive breweries: </h2>
 <p> Number of inactive breweries: <%= @inactive_breweries.count %> </p>
 
-<table class="table table-striped">
-  <thead>
-    <tr>
-      <th><%= link_to 'Name', breweries_path(order:"name") %></th>
-      <th><%= link_to 'Year', breweries_path(order:"year") %></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @inactive_breweries.each do |brewery| %>
-      <tr>
-        <td><%= link_to brewery.name, brewery %></td>
-        <td><%= brewery.year %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+<%= render 'list', breweries: @inactive_breweries %>
 
 <br>
 
