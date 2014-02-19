@@ -1,10 +1,10 @@
 <h1>Sign in</h1>
 
 <!-- add notice about signin failure -->
-<p id="notice"> <%= notice%> </p>
+<!--<p id="notice"> <%= notice%> </p>-->
 
 <%= form_tag sessions_path do %>
     Username: <%= text_field_tag :username, params[:username] %>
     Password: <%= password_field_tag :password, params[:password] %>
-    <%= submit_tag "log in" %>
+    <%= submit_tag "log in" , class:'btn btn-primary'%>
 <% end %>

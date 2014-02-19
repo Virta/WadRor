@@ -1,6 +1,6 @@
 <h1>Listing breweries</h1>
 
-<p id="notice"><%= notice %></p>
+<!--<p id="notice"><%= notice %></p>-->
 
 <table class="table table-striped">
   <thead>
@@ -22,6 +22,6 @@
 
 <p> Number of breweries: <%= @breweries.count %> </p>
 
-<p><%= link_to 'Go to beers', beers_path %> </p>
+<!--<p><%= link_to 'Go to beers', beers_path %> </p>-->
 
-<%= link_to 'New Brewery', new_brewery_path if current_user %>
+<%= link_to 'New Brewery', new_brewery_path, class:'btn btn-primary' if current_user %>
