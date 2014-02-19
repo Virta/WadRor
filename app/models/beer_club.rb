@@ -9,6 +9,10 @@ class BeerClub < ActiveRecord::Base
   validates :city, length: { minimum: 3,
                               maximum: 20 }
 
+  def members(confirmation)
+    memberships.all.select{ |m| m.confirmed==confirmation}
+  end
+
   def to_s
     "#{name}, #{city}"
   end

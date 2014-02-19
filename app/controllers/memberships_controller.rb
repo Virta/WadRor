@@ -13,6 +13,18 @@ class MembershipsController < ApplicationController
   def show
   end
 
+  # confirmation toggling
+  def toggle_confirmation
+    membership = Membership.find params[:id]
+    if membership.beer_club.members(true).map(&:user).include?(current_user)
+      membership.update_attribute(:confirmed, true)
+      redirect_to :back, notice: "Membership of #{membership.user.username} confirmed."
+    else
+      redirect_to :back, notice: "Only a confirmed member of this club can confirm memberships."
+    end
+
+  end
+
   # GET /memberships/new
   def new
     @membership = Membership.new
@@ -28,13 +40,14 @@ class MembershipsController < ApplicationController
   def create
     if current_user
       @membership = Membership.new params.require(:membership).permit(:beer_club_id)
+      @membership.confirmed=false
 
       if current_user.memberships.find_by(beer_club_id:(@membership.beer_club_id))
         @beer_clubs = BeerClub.all
         redirect_to :back, notice: "You are already a member of that club"
       elsif @membership.save
         current_user.memberships << @membership
-        redirect_to beer_club_path(@membership.beer_club_id), notice: "Welcome to #{@membership.beer_club.name}!"
+        redirect_to beer_club_path(@membership.beer_club_id), notice: "Welcome to #{@membership.beer_club.name}! An elder must still confirm your membership."
       else
         @beer_clubs = BeerClub.all
         render :new

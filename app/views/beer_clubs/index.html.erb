@@ -11,6 +11,7 @@
           <%= beer_club.city %>
           <i>(<%= beer_club.founded %>)</i>
         </td>
+        <td> <%= beer_club.memberships.count %> members</td>
         <% if current_user %>
             <td><%= link_to 'Destroy', beer_club, method: :delete, data: { confirm: 'Are you sure?' } if current_user.is_admin? %></td>
         <% end %>

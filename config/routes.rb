@@ -4,7 +4,9 @@ Ratebeer::Application.routes.draw do
 
   resources :beer_clubs
 
-  resources :memberships, only: [:new, :create, :destroy]
+  resources :memberships, only: [:new, :create, :destroy] do
+    post 'toggle_confirmation', on: :member
+  end
 
   resources :users
 
