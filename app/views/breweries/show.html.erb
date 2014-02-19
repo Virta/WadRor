@@ -5,6 +5,13 @@
 <p>
   <i>Established in: <%= @brewery.year %></i>.
 </p>
+<p><%= @brewery.name %> is
+    <% if @brewery.active? %>
+        still in the game!
+    <% else %>
+        retired old man.
+  <% end %>
+</p>
 
 <p>
   <% @brewery.beers.each do |beer| %>
