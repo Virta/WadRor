@@ -36,6 +36,12 @@ gem 'bcrypt-ruby', '~> 3.1.2'
 # Jquery for dynamic content
 gem 'jquery-turbolinks'
 
+#use selenium for js tests
+gem 'selenium-webdriver'
+
+# database cleaner for use with selenium tests and non transactional fixtures
+gem 'database_cleaner', '< 1.1.0'
+
 # use debugger
 gem 'debugger', group: [:development, :test]
 
