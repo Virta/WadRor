@@ -1,16 +1,41 @@
 <h1>Ratings</h1>
 
+<h3>Top stats:</h3>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>Best beers</th>
+      <th>Best breweries</th>
+      <th>Most active</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+        <td><%= link_to @best_beers[0].name, @best_beers[0] if @best_beers.count>0 if @best_beers %></td>
+        <td><%= link_to @best_breweries[0].name, @best_breweries[0] if @best_breweries.count>0 if @best_beers %></td>
+        <td><%= link_to @active_users[0].username, @active_users[0] if @active_users.count>0 if @active_users %></td>
+    </tr>
+    <tr>
+        <td><%= link_to @best_beers[1].name, @best_beers[1] if @best_beers.count>1 if @best_beers %></td>
+        <td><%= link_to @best_breweries[1].name, @best_breweries[1] if @best_breweries.count>1 if @best_beers %>
+      <td><%= link_to @active_users[1].username, @active_users[1] if @active_users.count>1 if @active_users %>
+    </tr>
+    <tr>
+        <td><%= link_to @best_beers[2].name, @best_beers[2] if @best_beers.count>2 if @best_beers %></td>
+        <td><%= link_to @best_breweries[2].name, @best_breweries[2] if @best_breweries.count>2 if @best_beers %>
+        <td><%= link_to @active_users[2].username, @active_users[2] if @active_users.count>2 if @active_users %>
+    </tr>
+  </tbody>
+</table>
+
+<br>
+
+<h3>Recent ratings:</h3>
 <table class="table table-hover">
-  <% @ratings.each do |rating| %>
+  <% @recent_ratings.each do |rating| %>
       <tr>
         <td>
-          <%= link_to rating.beer.name, rating.beer %>:
-        </td>
-        <td>
-          <%= rating.score %>
-        </td>
-        <td>
-          <%= link_to rating.user.username, user_path(rating.user_id) %>
+          <%= link_to rating.beer.name, rating.beer %>: <%= rating.score %> by <%= link_to rating.user.username, user_path(rating.user_id) %>
         </td>
       </tr>
   <% end %>
@@ -18,7 +43,7 @@
 
 <br>
 
-<p>Total ratings: <%= @ratings.count %></p>
+<p>Total ratings: <%= @ratings_count %></p>
 
 <br>
 

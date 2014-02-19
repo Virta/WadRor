@@ -29,6 +29,11 @@ class User < ActiveRecord::Base
     breweries_interrogate
   end
 
+  def self.most_active_users
+    all_active_users = User.all.select{ |u| u.ratings.count > 0}
+    all_active_users.sort_by{ |r| r.ratings.count}.reverse!
+  end
+
   def breweries_interrogate
     highest = 0.0
     brewery = nil

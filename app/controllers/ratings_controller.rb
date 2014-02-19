@@ -2,7 +2,11 @@ class RatingsController < ApplicationController
   before_action :enforce_signin, except: [:index, :show]
 
   def index
-    @ratings = Rating.all
+    @recent_ratings = Rating.recent
+    @ratings_count = Rating.all.count
+    @best_beers = Beer.best_beers.first(3)
+    @best_breweries = Brewery.best_breweries.first(3)
+    @active_users = User.most_active_users.first(3)
   end
 
   def new
