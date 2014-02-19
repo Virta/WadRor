@@ -2,13 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="39cbafec-e20b-4325-a860-b12b258489e6" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/application.css" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Gemfile.lock" afterPath="$PROJECT_DIR$/Gemfile.lock" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Gemfile" afterPath="$PROJECT_DIR$/Gemfile" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/layouts/_navigation_links.html.erb" afterPath="$PROJECT_DIR$/app/views/layouts/_navigation_links.html.erb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/layouts/application.html.erb" afterPath="$PROJECT_DIR$/app/views/layouts/application.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/assets/javascripts/application.js" afterPath="$PROJECT_DIR$/app/assets/javascripts/application.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/ratebeer.iml" afterPath="$PROJECT_DIR$/.idea/ratebeer.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/users/index.html.erb" afterPath="$PROJECT_DIR$/app/views/users/index.html.erb" />
     </list>
     <ignored path="ratebeer.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -38,24 +34,6 @@
         <entry file="file://$PROJECT_DIR$/app/views/breweries/nglist.html">
           <provider selected="true" editor-type-id="text-editor">
             <state line="4" column="28" selection-start="262" selection-end="262" vertical-scroll-proportion="0.0" vertical-offset="60" max-vertical-offset="630">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="index.json.jbuilder" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/views/beers/index.json.jbuilder">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="5" column="0" selection-start="115" selection-end="170" vertical-scroll-proportion="0.0" vertical-offset="75" max-vertical-offset="210">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="index.json.jbuilder" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/views/breweries/index.json.jbuilder">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="4" column="34" selection-start="185" selection-end="185" vertical-scroll-proportion="0.0" vertical-offset="60" max-vertical-offset="195">
               <folding />
             </state>
           </provider>
@@ -106,22 +84,45 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="application.html.erb" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="application.html.erb" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/views/layouts/application.html.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="17" column="11" selection-start="672" selection-end="672" vertical-scroll-proportion="-10.625" vertical-offset="0" max-vertical-offset="390">
+            <state line="26" column="6" selection-start="907" selection-end="907" vertical-scroll-proportion="0.42951542" vertical-offset="0" max-vertical-offset="908">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="copy_of_application.html.erb" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="copy_of_application.html.erb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/views/layouts/copy_of_application.html.erb">
           <provider editor-type-id="com.intellij.persistence.database.editor.CsvTableFileEditorProvider">
             <state />
           </provider>
           <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="928">
+            <state line="11" column="0" selection-start="290" selection-end="995" vertical-scroll-proportion="-6.3461537" vertical-offset="0" max-vertical-offset="630">
+              <folding>
+                <marker date="1392795986417" expanded="true" signature="21:1034" placeholder="..." />
+                <marker date="1392795986417" expanded="true" signature="28:258" placeholder="..." />
+                <marker date="1392795986417" expanded="true" signature="265:1026" placeholder="..." />
+                <marker date="1392795986417" expanded="true" signature="288:1001" placeholder="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="_navigation_links.html.erb" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/views/layouts/_navigation_links.html.erb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="11" column="9" selection-start="474" selection-end="474" vertical-scroll-proportion="-6.875" vertical-offset="0" max-vertical-offset="375">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.html.erb" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/views/users/index.html.erb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="10" column="8" selection-start="299" selection-end="299" vertical-scroll-proportion="-6.25" vertical-offset="0" max-vertical-offset="375">
               <folding />
             </state>
           </provider>
@@ -140,8 +141,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/spec/lib/beermapping_api_spec.rb" />
-        <option value="$PROJECT_DIR$/lib/beermapping_api.rb" />
         <option value="$PROJECT_DIR$/app/views/sessions/show.html" />
         <option value="$PROJECT_DIR$/app/views/places/show.html" />
         <option value="$PROJECT_DIR$/app/views/places/index.html.erb" />
@@ -159,7 +158,6 @@
         <option value="$PROJECT_DIR$/db/seeds.rb" />
         <option value="$PROJECT_DIR$/app/views/beers/_form.html.erb" />
         <option value="$PROJECT_DIR$/db/migrate/20140213082207_connect_new_styles_to_old_ones.rb" />
-        <option value="$PROJECT_DIR$/app/views/layouts/application.html.erb" />
         <option value="$PROJECT_DIR$/app/controllers/styles_controller.rb" />
         <option value="$PROJECT_DIR$/app/views/styles/show.html.erb" />
         <option value="$PROJECT_DIR$/app/views/styles/index.html.erb" />
@@ -191,6 +189,9 @@
         <option value="$PROJECT_DIR$/config/routes.rb" />
         <option value="$PROJECT_DIR$/spec/features/beerlist_page_spec.rb" />
         <option value="$PROJECT_DIR$/Gemfile" />
+        <option value="$PROJECT_DIR$/app/views/layouts/_navigation_links.html.erb" />
+        <option value="$PROJECT_DIR$/app/views/users/index.html.erb" />
+        <option value="$PROJECT_DIR$/app/views/layouts/application.html.erb" />
       </list>
     </option>
   </component>
@@ -896,18 +897,6 @@
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/db/migrate/20140213081230_add_style_foreign_key_to_beer.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="2" column="33" selection-start="103" selection-end="103" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="165">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/db/migrate/20140213081708_create_new_styles_from_old_ones.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="4" column="86" selection-start="251" selection-end="251" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="210" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/views/beers/new.html.erb">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="923" />
@@ -1062,7 +1051,9 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/controllers/application_controller.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="926" />
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="926">
+          <folding />
+        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/ratings/index.json.jbuilder">
@@ -1187,19 +1178,38 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/layouts/application.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="17" column="11" selection-start="672" selection-end="672" vertical-scroll-proportion="-10.625" vertical-offset="0" max-vertical-offset="390">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/views/layouts/copy_of_application.html.erb">
       <provider editor-type-id="com.intellij.persistence.database.editor.CsvTableFileEditorProvider">
         <state />
       </provider>
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="906">
+        <state line="11" column="0" selection-start="290" selection-end="995" vertical-scroll-proportion="-6.3461537" vertical-offset="0" max-vertical-offset="630">
+          <folding>
+            <marker date="1392795986417" expanded="true" signature="21:1034" placeholder="..." />
+            <marker date="1392795986417" expanded="true" signature="28:258" placeholder="..." />
+            <marker date="1392795986417" expanded="true" signature="265:1026" placeholder="..." />
+            <marker date="1392795986417" expanded="true" signature="288:1001" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/users/index.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="10" column="8" selection-start="299" selection-end="299" vertical-scroll-proportion="-6.25" vertical-offset="0" max-vertical-offset="375">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/layouts/_navigation_links.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="11" column="9" selection-start="474" selection-end="474" vertical-scroll-proportion="-6.875" vertical-offset="0" max-vertical-offset="375">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/layouts/application.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="26" column="6" selection-start="907" selection-end="907" vertical-scroll-proportion="0.42951542" vertical-offset="0" max-vertical-offset="908">
           <folding />
         </state>
       </provider>
