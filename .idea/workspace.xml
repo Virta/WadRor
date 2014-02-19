@@ -2,12 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="39cbafec-e20b-4325-a860-b12b258489e6" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/coverage/.last_run.json" afterPath="$PROJECT_DIR$/coverage/.last_run.json" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/coverage/.resultset.json" afterPath="$PROJECT_DIR$/coverage/.resultset.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Gemfile.lock" afterPath="$PROJECT_DIR$/Gemfile.lock" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Gemfile" afterPath="$PROJECT_DIR$/Gemfile" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/spec/features/beerlist_page_spec.rb" afterPath="$PROJECT_DIR$/spec/features/beerlist_page_spec.rb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/coverage/index.html" afterPath="$PROJECT_DIR$/coverage/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/ratebeer.iml" afterPath="$PROJECT_DIR$/.idea/ratebeer.iml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="ratebeer.iws" />
@@ -107,7 +104,7 @@
       <file leaf-file-name="beerlist_page_spec.rb" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/spec/features/beerlist_page_spec.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="19" column="5" selection-start="666" selection-end="666" vertical-scroll-proportion="0.29874215" vertical-offset="0" max-vertical-offset="954">
+            <state line="58" column="73" selection-start="2066" selection-end="2066" vertical-scroll-proportion="0.8742138" vertical-offset="36" max-vertical-offset="990">
               <folding />
             </state>
           </provider>
@@ -1176,7 +1173,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/spec/features/beerlist_page_spec.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="19" column="5" selection-start="666" selection-end="666" vertical-scroll-proportion="0.29874215" vertical-offset="0" max-vertical-offset="954">
+        <state line="58" column="73" selection-start="2066" selection-end="2066" vertical-scroll-proportion="0.8742138" vertical-offset="36" max-vertical-offset="990">
           <folding />
         </state>
       </provider>
