@@ -2,12 +2,30 @@ class RatingsController < ApplicationController
   before_action :enforce_signin, except: [:index, :show]
 
   def index
-    @recent_ratings = Rating.recent
-    @ratings_count = Rating.all.count
-    @best_beers = Beer.best_beers.first(3)
-    @best_breweries = Brewery.best_breweries.first(3)
-    @active_users = User.most_active_users.first(3)
-    @best_styles = Style.best_styles.first(3)
+    Rails.cache.write('recent-ratings', Rating.recent) unless cached_and_valid 'recent-ratings'
+    @recent_ratings = Rails.cache.read 'recent-ratings'
+
+    Rails.cache.write('ratings-count', Rating.all.count) unless cached_and_valid 'ratings-count'
+    @ratings_count = Rails.cache.read 'ratings-count'
+
+    Rails.cache.write('top-stats',
+                      [ Beer.best_beers.first(3),
+                        Brewery.best_breweries.first(3),
+                        Style.best_styles.first(3)
+                      ] ) unless cached_and_valid 'top-stats'
+
+    @best_beers = Rails.cache.read('top-stats')[0]
+
+    @best_breweries = Rails.cache.read('top-stats')[1]
+
+    @best_styles = Rails.cache.read('top-stats')[2]
+
+    Rails.cache.write('active-users', User.most_active_users.first(3)) unless cached_and_valid 'active-users'
+    @active_users = Rails.cache.read 'active-users'
+  end
+
+  def cached_and_valid(cache_key)
+    Rails.cache.exist?(cache_key)
   end
 
   def new
