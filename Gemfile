@@ -9,6 +9,8 @@ gem 'rails', '4.0.2'
 # Use sqlite3 as the testing and development Active Record
 group :development, :test do
   gem 'sqlite3'
+  # miniprofiler access to nice load time stats
+  gem 'rack-mini-profiler'
 end
 group :test do
   gem 'rspec-rails', '~> 2.14.1'
@@ -26,9 +28,6 @@ end
 
 # API-key db
 gem 'rails-settings-cached'
-
-# miniprofiler replaces log
-gem 'rack-mini-profiler'
 
 # HTTP-requests gem
 gem 'httparty'

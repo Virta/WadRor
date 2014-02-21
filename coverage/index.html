@@ -14,27 +14,27 @@
       <img src="./assets/0.8.0/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" style="display:none;">
-      <div class="timestamp">Generated <abbr class="timeago" title="2014-02-21T11:22:13+02:00">2014-02-21T11:22:13+02:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2014-02-21T12:39:51+02:00">2014-02-21T12:39:51+02:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
         <div class="file_list_container" id="AllFiles">
   <h2>
     <span class="group_name">All Files</span>
-    (<span class="covered_percent"><span class="yellow">81.06%</span></span>
+    (<span class="covered_percent"><span class="yellow">81.35%</span></span>
      covered at
      <span class="covered_strength">
        <span class="green">
-         2.37
+         2.38
        </span>
     </span> hits/line)
   </h2>
   <a name="AllFiles"></a>
   <div>
     <b>49</b> files in total.
-    <b>771</b> relevant lines. 
-    <span class="green"><b>625</b> lines covered</span> and
-    <span class="red"><b>146</b> lines missed </span>
+    <b>788</b> relevant lines. 
+    <span class="green"><b>641</b> lines covered</span> and
+    <span class="red"><b>147</b> lines missed </span>
   </div>
   <table class="file_list">
     <thead>
@@ -72,22 +72,22 @@
       
       <tr>
         <td class="strong"><a href="#8e048f9182d509dacd70d05e11c2287e46c2bc12" class="src_link" title="app/controllers/beers_controller.rb">app/controllers/beers_controller.rb</a></td>
-        <td class="red strong">70.83 %</td>
-        <td>97</td>
-        <td>48</td>
-        <td>34</td>
+        <td class="red strong">74.55 %</td>
+        <td>108</td>
+        <td>55</td>
+        <td>41</td>
         <td>14</td>
-        <td>1.4</td>
+        <td>1.6</td>
       </tr>
       
       <tr>
         <td class="strong"><a href="#21796f3723223a24f19f0131ba715a21733fad33" class="src_link" title="app/controllers/breweries_controller.rb">app/controllers/breweries_controller.rb</a></td>
-        <td class="red strong">47.83 %</td>
-        <td>110</td>
-        <td>46</td>
-        <td>22</td>
-        <td>24</td>
-        <td>0.7</td>
+        <td class="red strong">53.7 %</td>
+        <td>121</td>
+        <td>54</td>
+        <td>29</td>
+        <td>25</td>
+        <td>0.8</td>
       </tr>
       
       <tr>
@@ -423,11 +423,11 @@
       <tr>
         <td class="strong"><a href="#66ec9730369fb0b5421cb3d5526c6e19804154c0" class="src_link" title="lib/rating_average.rb">lib/rating_average.rb</a></td>
         <td class="green strong">100.0 %</td>
-        <td>10</td>
-        <td>7</td>
-        <td>7</td>
+        <td>12</td>
+        <td>9</td>
+        <td>9</td>
         <td>0</td>
-        <td>8.3</td>
+        <td>8.7</td>
       </tr>
       
       <tr>
@@ -1225,10 +1225,10 @@
         <div class="source_table" id="8e048f9182d509dacd70d05e11c2287e46c2bc12">
   <div class="header">
     <h3>app/controllers/beers_controller.rb</h3>
-    <h4><span class="red">70.83 %</span> covered</h4>
+    <h4><span class="red">74.55 %</span> covered</h4>
     <div>
-      <b>48</b> relevant lines. 
-      <span class="green"><b>34</b> lines covered</span> and
+      <b>55</b> relevant lines. 
+      <span class="green"><b>41</b> lines covered</span> and
       <span class="red"><b>14</b> lines missed.</span>
     </div>
   </div>
@@ -1266,46 +1266,46 @@
           <code class="ruby">  before_action :enforce_admin_signin, only:[:destroy, :edit]</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="6">
+        <li class="covered" data-hits="1" data-linenumber="6">
+          <span class="hits">1</span>
           
-          
-          <code class="ruby"></code>
+          <code class="ruby">  after_action :expire_beerlist_fragment, only:[:create, :destroy, :update]</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="7">
+        <li class="covered" data-hits="1" data-linenumber="7">
+          <span class="hits">1</span>
           
-          
-          <code class="ruby">  # GET /beers</code>
+          <code class="ruby">  before_action :skip_if_cached, only: :index</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="8">
           
           
-          <code class="ruby">  # GET /beers.json</code>
+          <code class="ruby"></code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="9">
           <span class="hits">1</span>
           
-          <code class="ruby">  def index</code>
+          <code class="ruby">  def skip_if_cached</code>
         </li>
       
         <li class="covered" data-hits="4" data-linenumber="10">
           <span class="hits">4</span>
           
-          <code class="ruby">    @beers = Beer.includes(:brewery, :style, :ratings).all</code>
+          <code class="ruby">    @order = params[:order] || &#39;name&#39;</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="11">
-          
-          
-          <code class="ruby"></code>
-        </li>
-      
-        <li class="covered" data-hits="4" data-linenumber="12">
+        <li class="covered" data-hits="4" data-linenumber="11">
           <span class="hits">4</span>
           
-          <code class="ruby">    order = params[:order] || &#39;name&#39;</code>
+          <code class="ruby">    return render :index if fragment_exist?( &quot;beerlist-#{params[:order]}&quot;  )</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="12">
+          
+          
+          <code class="ruby">  end</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="13">
@@ -1314,40 +1314,40 @@
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="4" data-linenumber="14">
+        <li class="never" data-hits="" data-linenumber="14">
+          
+          
+          <code class="ruby">  # GET /beers</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="15">
+          
+          
+          <code class="ruby">  # GET /beers.json</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="16">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  def index</code>
+        </li>
+      
+        <li class="covered" data-hits="4" data-linenumber="17">
           <span class="hits">4</span>
           
-          <code class="ruby">    case order</code>
-        </li>
-      
-        <li class="covered" data-hits="16" data-linenumber="15">
-          <span class="hits">16</span>
-          
-          <code class="ruby">      when &#39;name&#39; then @beers.sort_by!{ |b| b.name }</code>
-        </li>
-      
-        <li class="missed" data-hits="0" data-linenumber="16">
-          
-          
-          <code class="ruby">      when &#39;brewery&#39; then @beers.sort_by!{ |b| b.brewery }</code>
-        </li>
-      
-        <li class="missed" data-hits="0" data-linenumber="17">
-          
-          
-          <code class="ruby">      when &#39;style&#39; then @beers.sort_by!{ |b| b.style }</code>
+          <code class="ruby">    @beers = Beer.includes(:brewery, :style, :ratings).all</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="18">
           
           
-          <code class="ruby">    end</code>
+          <code class="ruby"></code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="19">
+        <li class="covered" data-hits="4" data-linenumber="19">
+          <span class="hits">4</span>
           
-          
-          <code class="ruby">  end</code>
+          <code class="ruby">    order = params[:order] || &#39;name&#39;</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="20">
@@ -1356,70 +1356,70 @@
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="21">
-          <span class="hits">1</span>
+        <li class="covered" data-hits="4" data-linenumber="21">
+          <span class="hits">4</span>
           
-          <code class="ruby">  def list</code>
+          <code class="ruby">    case order</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="22">
+        <li class="covered" data-hits="16" data-linenumber="22">
+          <span class="hits">16</span>
           
-          
-          <code class="ruby">  end</code>
+          <code class="ruby">      when &#39;name&#39; then @beers.sort_by!{ |b| b.name }</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="23">
+        <li class="missed" data-hits="0" data-linenumber="23">
           
           
-          <code class="ruby"></code>
+          <code class="ruby">      when &#39;brewery&#39; then @beers.sort_by!{ |b| b.brewery }</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="24">
-          <span class="hits">1</span>
+        <li class="missed" data-hits="0" data-linenumber="24">
           
-          <code class="ruby">  def nglist</code>
+          
+          <code class="ruby">      when &#39;style&#39; then @beers.sort_by!{ |b| b.style }</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="25">
           
           
-          <code class="ruby">  end</code>
+          <code class="ruby">    end</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="26">
           
           
-          <code class="ruby"></code>
+          <code class="ruby">  end</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="27">
           
           
-          <code class="ruby">  # GET /beers/1</code>
+          <code class="ruby"></code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="28">
-          
-          
-          <code class="ruby">  # GET /beers/1.json</code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="29">
+        <li class="covered" data-hits="1" data-linenumber="28">
           <span class="hits">1</span>
           
-          <code class="ruby">  def show</code>
+          <code class="ruby">  def list</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="30">
-          <span class="hits">1</span>
+        <li class="never" data-hits="" data-linenumber="29">
           
-          <code class="ruby">    @rating = Rating.new</code>
+          
+          <code class="ruby">  end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="30">
+          
+          
+          <code class="ruby"></code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="31">
           <span class="hits">1</span>
           
-          <code class="ruby">    @rating.beer = @beer</code>
+          <code class="ruby">  def nglist</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="32">
@@ -1437,313 +1437,313 @@
         <li class="never" data-hits="" data-linenumber="34">
           
           
-          <code class="ruby">  # GET /beers/new</code>
+          <code class="ruby">  # GET /beers/1</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="35">
+        <li class="never" data-hits="" data-linenumber="35">
+          
+          
+          <code class="ruby">  # GET /beers/1.json</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="36">
           <span class="hits">1</span>
           
-          <code class="ruby">  def new</code>
+          <code class="ruby">  def show</code>
         </li>
       
-        <li class="covered" data-hits="2" data-linenumber="36">
-          <span class="hits">2</span>
+        <li class="covered" data-hits="1" data-linenumber="37">
+          <span class="hits">1</span>
           
-          <code class="ruby">    @beer = Beer.new</code>
+          <code class="ruby">    @rating = Rating.new</code>
         </li>
       
-        <li class="covered" data-hits="2" data-linenumber="37">
-          <span class="hits">2</span>
+        <li class="covered" data-hits="1" data-linenumber="38">
+          <span class="hits">1</span>
           
-          <code class="ruby">    set_breweries_and_styles</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="38">
-          
-          
-          <code class="ruby">  end</code>
+          <code class="ruby">    @rating.beer = @beer</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="39">
           
           
-          <code class="ruby"></code>
+          <code class="ruby">  end</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="40">
           
           
-          <code class="ruby">  # GET /beers/1/edit</code>
+          <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="41">
+        <li class="never" data-hits="" data-linenumber="41">
+          
+          
+          <code class="ruby">  # GET /beers/new</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="42">
           <span class="hits">1</span>
           
-          <code class="ruby">  def edit</code>
+          <code class="ruby">  def new</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="42">
+        <li class="covered" data-hits="2" data-linenumber="43">
+          <span class="hits">2</span>
           
+          <code class="ruby">    @beer = Beer.new</code>
+        </li>
+      
+        <li class="covered" data-hits="2" data-linenumber="44">
+          <span class="hits">2</span>
           
           <code class="ruby">    set_breweries_and_styles</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="43">
-          
-          
-          <code class="ruby">  end</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="44">
-          
-          
-          <code class="ruby"></code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="45">
           
           
-          <code class="ruby">  # POST /beers</code>
+          <code class="ruby">  end</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="46">
           
           
-          <code class="ruby">  # POST /beers.json</code>
+          <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="47">
+        <li class="never" data-hits="" data-linenumber="47">
+          
+          
+          <code class="ruby">  # GET /beers/1/edit</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="48">
           <span class="hits">1</span>
           
-          <code class="ruby">  def create</code>
+          <code class="ruby">  def edit</code>
         </li>
       
-        <li class="covered" data-hits="2" data-linenumber="48">
-          <span class="hits">2</span>
+        <li class="missed" data-hits="0" data-linenumber="49">
           
-          <code class="ruby">    @beer = Beer.new params.require(:beer).permit(:name, :style_id, :brewery_id)</code>
+          
+          <code class="ruby">    set_breweries_and_styles</code>
         </li>
       
-        <li class="covered" data-hits="2" data-linenumber="49">
-          <span class="hits">2</span>
+        <li class="never" data-hits="" data-linenumber="50">
           
-          <code class="ruby">    if @beer.save</code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="50">
-          <span class="hits">1</span>
           
-          <code class="ruby">      redirect_to @beer</code>
+          <code class="ruby">  end</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="51">
           
           
-          <code class="ruby">    else</code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="52">
-          <span class="hits">1</span>
-          
-          <code class="ruby">      set_breweries_and_styles</code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="53">
-          <span class="hits">1</span>
-          
-          <code class="ruby">      render :new</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="54">
-          
-          
-          <code class="ruby">    end</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="55">
-          
-          
           <code class="ruby"></code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="56">
+        <li class="never" data-hits="" data-linenumber="52">
           
           
-          <code class="ruby">  end</code>
+          <code class="ruby">  # POST /beers</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="57">
+        <li class="never" data-hits="" data-linenumber="53">
           
           
-          <code class="ruby"></code>
+          <code class="ruby">  # POST /beers.json</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="54">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  def create</code>
+        </li>
+      
+        <li class="covered" data-hits="2" data-linenumber="55">
+          <span class="hits">2</span>
+          
+          <code class="ruby">    @beer = Beer.new params.require(:beer).permit(:name, :style_id, :brewery_id)</code>
+        </li>
+      
+        <li class="covered" data-hits="2" data-linenumber="56">
+          <span class="hits">2</span>
+          
+          <code class="ruby">    if @beer.save</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="57">
+          <span class="hits">1</span>
+          
+          <code class="ruby">      redirect_to @beer</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="58">
           
           
-          <code class="ruby">  # PATCH/PUT /beers/1</code>
+          <code class="ruby">    else</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="59">
+        <li class="covered" data-hits="1" data-linenumber="59">
+          <span class="hits">1</span>
           
-          
-          <code class="ruby">  # PATCH/PUT /beers/1.json</code>
+          <code class="ruby">      set_breweries_and_styles</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="60">
           <span class="hits">1</span>
           
-          <code class="ruby">  def update</code>
+          <code class="ruby">      render :new</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="61">
+        <li class="never" data-hits="" data-linenumber="61">
           
           
-          <code class="ruby">    respond_to do |format|</code>
+          <code class="ruby">    end</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="62">
+        <li class="never" data-hits="" data-linenumber="62">
           
           
-          <code class="ruby">      if @beer.update(beer_params)</code>
+          <code class="ruby"></code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="63">
+        <li class="never" data-hits="" data-linenumber="63">
           
           
-          <code class="ruby">        format.html { redirect_to @beer, notice: &#39;Beer was successfully updated.&#39; }</code>
+          <code class="ruby">  end</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="64">
+        <li class="never" data-hits="" data-linenumber="64">
           
           
-          <code class="ruby">        format.json { head :no_content }</code>
+          <code class="ruby"></code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="65">
           
           
-          <code class="ruby">      else</code>
+          <code class="ruby">  # PATCH/PUT /beers/1</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="66">
+        <li class="never" data-hits="" data-linenumber="66">
           
           
-          <code class="ruby">        format.html { render action: &#39;edit&#39; }</code>
+          <code class="ruby">  # PATCH/PUT /beers/1.json</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="67">
-          
-          
-          <code class="ruby">        format.json { render json: @beer.errors, status: :unprocessable_entity }</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="68">
-          
-          
-          <code class="ruby">      end</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="69">
-          
-          
-          <code class="ruby">    end</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="70">
-          
-          
-          <code class="ruby">  end</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="71">
-          
-          
-          <code class="ruby"></code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="72">
-          
-          
-          <code class="ruby">  # DELETE /beers/1</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="73">
-          
-          
-          <code class="ruby">  # DELETE /beers/1.json</code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="74">
+        <li class="covered" data-hits="1" data-linenumber="67">
           <span class="hits">1</span>
           
-          <code class="ruby">  def destroy</code>
+          <code class="ruby">  def update</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="75">
-          
-          
-          <code class="ruby">    @beer.destroy</code>
-        </li>
-      
-        <li class="missed" data-hits="0" data-linenumber="76">
+        <li class="missed" data-hits="0" data-linenumber="68">
           
           
           <code class="ruby">    respond_to do |format|</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="77">
+        <li class="missed" data-hits="0" data-linenumber="69">
           
           
-          <code class="ruby">      format.html { redirect_to beers_url }</code>
+          <code class="ruby">      if @beer.update(beer_params)</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="78">
+        <li class="missed" data-hits="0" data-linenumber="70">
           
           
-          <code class="ruby">      format.json { head :no_content }</code>
+          <code class="ruby">        format.html { redirect_to @beer, notice: &#39;Beer was successfully updated.&#39; }</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="79">
+        <li class="missed" data-hits="0" data-linenumber="71">
+          
+          
+          <code class="ruby">        format.json { head :no_content }</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="72">
+          
+          
+          <code class="ruby">      else</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="73">
+          
+          
+          <code class="ruby">        format.html { render action: &#39;edit&#39; }</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="74">
+          
+          
+          <code class="ruby">        format.json { render json: @beer.errors, status: :unprocessable_entity }</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="75">
+          
+          
+          <code class="ruby">      end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="76">
           
           
           <code class="ruby">    end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="80">
+        <li class="never" data-hits="" data-linenumber="77">
           
           
           <code class="ruby">  end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="81">
+        <li class="never" data-hits="" data-linenumber="78">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="82">
-          <span class="hits">1</span>
+        <li class="never" data-hits="" data-linenumber="79">
           
-          <code class="ruby">  private</code>
+          
+          <code class="ruby">  # DELETE /beers/1</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="83">
+        <li class="never" data-hits="" data-linenumber="80">
           
           
-          <code class="ruby">    # Use callbacks to share common setup or constraints between actions.</code>
+          <code class="ruby">  # DELETE /beers/1.json</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="84">
+        <li class="covered" data-hits="1" data-linenumber="81">
           <span class="hits">1</span>
           
-          <code class="ruby">    def set_beer</code>
+          <code class="ruby">  def destroy</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="85">
-          <span class="hits">1</span>
+        <li class="missed" data-hits="0" data-linenumber="82">
           
-          <code class="ruby">      @beer = Beer.find(params[:id])</code>
+          
+          <code class="ruby">    @beer.destroy</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="83">
+          
+          
+          <code class="ruby">    respond_to do |format|</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="84">
+          
+          
+          <code class="ruby">      format.html { redirect_to beers_url }</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="85">
+          
+          
+          <code class="ruby">      format.json { head :no_content }</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="86">
@@ -1755,64 +1755,130 @@
         <li class="never" data-hits="" data-linenumber="87">
           
           
-          <code class="ruby"></code>
+          <code class="ruby">  end</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="88">
           
           
-          <code class="ruby">    # Never trust parameters from the scary internet, only allow the white list through.</code>
+          <code class="ruby"></code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="89">
           <span class="hits">1</span>
           
-          <code class="ruby">    def beer_params</code>
+          <code class="ruby">  private</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="90">
+        <li class="never" data-hits="" data-linenumber="90">
           
           
-          <code class="ruby">      params.require(:beer).permit(:name, :style_id, :brewery_id)</code>
+          <code class="ruby">    # Use callbacks to share common setup or constraints between actions.</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="91">
+        <li class="covered" data-hits="1" data-linenumber="91">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    def set_beer</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="92">
+          <span class="hits">1</span>
+          
+          <code class="ruby">      @beer = Beer.find(params[:id])</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="93">
           
           
           <code class="ruby">    end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="92">
+        <li class="never" data-hits="" data-linenumber="94">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="93">
+        <li class="never" data-hits="" data-linenumber="95">
+          
+          
+          <code class="ruby">    # Never trust parameters from the scary internet, only allow the white list through.</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="96">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    def beer_params</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="97">
+          
+          
+          <code class="ruby">      params.require(:beer).permit(:name, :style_id, :brewery_id)</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="98">
+          
+          
+          <code class="ruby">    end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="99">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="100">
           <span class="hits">1</span>
           
           <code class="ruby">  def set_breweries_and_styles</code>
         </li>
       
-        <li class="covered" data-hits="3" data-linenumber="94">
+        <li class="covered" data-hits="3" data-linenumber="101">
           <span class="hits">3</span>
           
           <code class="ruby">    @breweries = Brewery.all</code>
         </li>
       
-        <li class="covered" data-hits="3" data-linenumber="95">
+        <li class="covered" data-hits="3" data-linenumber="102">
           <span class="hits">3</span>
           
           <code class="ruby">    @styles = Style.all</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="96">
+        <li class="never" data-hits="" data-linenumber="103">
           
           
           <code class="ruby">  end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="97">
+        <li class="never" data-hits="" data-linenumber="104">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="105">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  def expire_beerlist_fragment</code>
+        </li>
+      
+        <li class="covered" data-hits="8" data-linenumber="106">
+          <span class="hits">8</span>
+          
+          <code class="ruby">    [&quot;name&quot;, &quot;style&quot;, &quot;brewery&quot;].each{ |f| expire_fragment(&quot;beerlist-#{f}&quot;) }</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="107">
+          
+          
+          <code class="ruby">  end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="108">
           
           
           <code class="ruby">end</code>
@@ -1825,11 +1891,11 @@
         <div class="source_table" id="21796f3723223a24f19f0131ba715a21733fad33">
   <div class="header">
     <h3>app/controllers/breweries_controller.rb</h3>
-    <h4><span class="red">47.83 %</span> covered</h4>
+    <h4><span class="red">53.7 %</span> covered</h4>
     <div>
-      <b>46</b> relevant lines. 
-      <span class="green"><b>22</b> lines covered</span> and
-      <span class="red"><b>24</b> lines missed.</span>
+      <b>54</b> relevant lines. 
+      <span class="green"><b>29</b> lines covered</span> and
+      <span class="red"><b>25</b> lines missed.</span>
     </div>
   </div>
   
@@ -1860,544 +1926,544 @@
           <code class="ruby">  before_action :enforce_admin_signin, only:[:destroy, :edit]</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="5">
+        <li class="covered" data-hits="1" data-linenumber="5">
+          <span class="hits">1</span>
           
-          
-          <code class="ruby">  #before_action :authenticate, :only =&gt; :destroy</code>
+          <code class="ruby">  after_action :expire_brewerylist_fragment, only: [:create, :destroy, :update, :toggle_activity]</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="6">
+        <li class="covered" data-hits="1" data-linenumber="6">
+          <span class="hits">1</span>
           
-          
-          <code class="ruby"></code>
+          <code class="ruby">  before_action :skip_if_cached, only: :index</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="7">
           
           
-          <code class="ruby">  # GET /breweries</code>
+          <code class="ruby"></code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="8">
           
           
+          <code class="ruby">  # GET /breweries</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="9">
+          
+          
           <code class="ruby">  # GET /breweries.json</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="9">
+        <li class="covered" data-hits="1" data-linenumber="10">
           <span class="hits">1</span>
           
           <code class="ruby">  def index</code>
         </li>
       
-        <li class="covered" data-hits="3" data-linenumber="10">
+        <li class="covered" data-hits="3" data-linenumber="11">
           <span class="hits">3</span>
           
           <code class="ruby">    @active_breweries = Brewery.active</code>
         </li>
       
-        <li class="covered" data-hits="3" data-linenumber="11">
+        <li class="covered" data-hits="3" data-linenumber="12">
           <span class="hits">3</span>
           
           <code class="ruby">    @inactive_breweries = Brewery.inactive</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="12">
+        <li class="never" data-hits="" data-linenumber="13">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="3" data-linenumber="13">
+        <li class="covered" data-hits="3" data-linenumber="14">
           <span class="hits">3</span>
           
           <code class="ruby">    order = params[:order] || &#39;name&#39;</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="14">
+        <li class="never" data-hits="" data-linenumber="15">
           
           
           <code class="ruby"></code>
-        </li>
-      
-        <li class="covered" data-hits="3" data-linenumber="15">
-          <span class="hits">3</span>
-          
-          <code class="ruby">    case order</code>
         </li>
       
         <li class="covered" data-hits="3" data-linenumber="16">
           <span class="hits">3</span>
           
+          <code class="ruby">    case order</code>
+        </li>
+      
+        <li class="covered" data-hits="3" data-linenumber="17">
+          <span class="hits">3</span>
+          
           <code class="ruby">      when &#39;name&#39; then @active_breweries.sort_by!{ |b| b.name }</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="17">
+        <li class="missed" data-hits="0" data-linenumber="18">
           
           
           <code class="ruby">      when &#39;year&#39; then @active_breweries.sort_by!{ |b| b.year }</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="18">
-          
-          
-          <code class="ruby">    end</code>
-        </li>
-      
         <li class="never" data-hits="" data-linenumber="19">
           
           
-          <code class="ruby">#    render :panimot</code>
+          <code class="ruby">    end</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="20">
           
           
-          <code class="ruby">  end</code>
+          <code class="ruby">#    render :panimot</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="21">
           
           
+          <code class="ruby">  end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="22">
+          
+          
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="22">
+        <li class="covered" data-hits="1" data-linenumber="23">
           <span class="hits">1</span>
           
           <code class="ruby">  def nglist</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="23">
-          
-          
-          <code class="ruby"></code>
-        </li>
-      
         <li class="never" data-hits="" data-linenumber="24">
           
           
-          <code class="ruby">  end</code>
+          <code class="ruby"></code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="25">
           
           
-          <code class="ruby"></code>
+          <code class="ruby">  end</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="26">
           
           
-          <code class="ruby">  # GET /breweries/1</code>
+          <code class="ruby"></code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="27">
           
           
+          <code class="ruby">  # GET /breweries/1</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="28">
+          
+          
           <code class="ruby">  # GET /breweries/1.json</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="28">
+        <li class="covered" data-hits="1" data-linenumber="29">
           <span class="hits">1</span>
           
           <code class="ruby">  def show</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="29">
-          
-          
-          <code class="ruby">  end</code>
-        </li>
-      
         <li class="never" data-hits="" data-linenumber="30">
           
           
-          <code class="ruby"></code>
+          <code class="ruby">  end</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="31">
           
           
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="32">
+          
+          
           <code class="ruby">  # for toggling activity state</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="32">
+        <li class="covered" data-hits="1" data-linenumber="33">
           <span class="hits">1</span>
           
           <code class="ruby">  def toggle_activity</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="33">
+        <li class="missed" data-hits="0" data-linenumber="34">
           
           
           <code class="ruby">    brewery = Brewery.find(params[:id])</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="34">
+        <li class="missed" data-hits="0" data-linenumber="35">
           
           
           <code class="ruby">    brewery.update_attribute :active, (not brewery.active)</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="35">
+        <li class="never" data-hits="" data-linenumber="36">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="36">
+        <li class="missed" data-hits="0" data-linenumber="37">
           
           
           <code class="ruby">    new_status = brewery.active? ? &#39;active&#39; : &#39;retired&#39;</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="37">
+        <li class="never" data-hits="" data-linenumber="38">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="38">
+        <li class="missed" data-hits="0" data-linenumber="39">
           
           
           <code class="ruby">    redirect_to :back, notice: &quot;Brewery activity changed to #{new_status}&quot;</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="39">
-          
-          
-          <code class="ruby">  end</code>
-        </li>
-      
         <li class="never" data-hits="" data-linenumber="40">
           
           
-          <code class="ruby"></code>
+          <code class="ruby">  end</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="41">
           
           
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="42">
+          
+          
           <code class="ruby">  # GET /breweries/new</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="42">
+        <li class="covered" data-hits="1" data-linenumber="43">
           <span class="hits">1</span>
           
           <code class="ruby">  def new</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="43">
+        <li class="missed" data-hits="0" data-linenumber="44">
           
           
           <code class="ruby">    @brewery = Brewery.new</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="44">
-          
-          
-          <code class="ruby">  end</code>
-        </li>
-      
         <li class="never" data-hits="" data-linenumber="45">
           
           
-          <code class="ruby"></code>
+          <code class="ruby">  end</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="46">
           
           
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="47">
+          
+          
           <code class="ruby">  # GET /breweries/1/edit</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="47">
+        <li class="covered" data-hits="1" data-linenumber="48">
           <span class="hits">1</span>
           
           <code class="ruby">  def edit</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="48">
-          
-          
-          <code class="ruby">  end</code>
-        </li>
-      
         <li class="never" data-hits="" data-linenumber="49">
           
           
-          <code class="ruby"></code>
+          <code class="ruby">  end</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="50">
           
           
-          <code class="ruby">  # POST /breweries</code>
+          <code class="ruby"></code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="51">
           
           
+          <code class="ruby">  # POST /breweries</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="52">
+          
+          
           <code class="ruby">  # POST /breweries.json</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="52">
+        <li class="covered" data-hits="1" data-linenumber="53">
           <span class="hits">1</span>
           
           <code class="ruby">  def create</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="53">
+        <li class="missed" data-hits="0" data-linenumber="54">
           
           
           <code class="ruby">    @brewery = Brewery.new(brewery_params)</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="54">
+        <li class="never" data-hits="" data-linenumber="55">
           
           
           <code class="ruby"></code>
-        </li>
-      
-        <li class="missed" data-hits="0" data-linenumber="55">
-          
-          
-          <code class="ruby">    respond_to do |format|</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="56">
           
           
-          <code class="ruby">      if @brewery.save</code>
+          <code class="ruby">    respond_to do |format|</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="57">
           
           
-          <code class="ruby">        format.html { redirect_to @brewery, notice: &#39;Brewery was successfully created.&#39; }</code>
+          <code class="ruby">      if @brewery.save</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="58">
           
           
+          <code class="ruby">        format.html { redirect_to @brewery, notice: &#39;Brewery was successfully created.&#39; }</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="59">
+          
+          
           <code class="ruby">        format.json { render action: &#39;show&#39;, status: :created, location: @brewery }</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="59">
+        <li class="never" data-hits="" data-linenumber="60">
           
           
           <code class="ruby">      else</code>
-        </li>
-      
-        <li class="missed" data-hits="0" data-linenumber="60">
-          
-          
-          <code class="ruby">        format.html { render action: &#39;new&#39; }</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="61">
           
           
-          <code class="ruby">        format.json { render json: @brewery.errors, status: :unprocessable_entity }</code>
+          <code class="ruby">        format.html { render action: &#39;new&#39; }</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="62">
+        <li class="missed" data-hits="0" data-linenumber="62">
           
           
-          <code class="ruby">      end</code>
+          <code class="ruby">        format.json { render json: @brewery.errors, status: :unprocessable_entity }</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="63">
           
           
-          <code class="ruby">    end</code>
+          <code class="ruby">      end</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="64">
           
           
-          <code class="ruby">  end</code>
+          <code class="ruby">    end</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="65">
           
           
-          <code class="ruby"></code>
+          <code class="ruby">  end</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="66">
           
           
-          <code class="ruby">  # PATCH/PUT /breweries/1</code>
+          <code class="ruby"></code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="67">
           
           
+          <code class="ruby">  # PATCH/PUT /breweries/1</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="68">
+          
+          
           <code class="ruby">  # PATCH/PUT /breweries/1.json</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="68">
+        <li class="covered" data-hits="1" data-linenumber="69">
           <span class="hits">1</span>
           
           <code class="ruby">  def update</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="69">
-          
-          
-          <code class="ruby">    respond_to do |format|</code>
-        </li>
-      
         <li class="missed" data-hits="0" data-linenumber="70">
           
           
-          <code class="ruby">      if @brewery.update(brewery_params)</code>
+          <code class="ruby">    respond_to do |format|</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="71">
           
           
-          <code class="ruby">        format.html { redirect_to @brewery, notice: &#39;Brewery was successfully updated.&#39; }</code>
+          <code class="ruby">      if @brewery.update(brewery_params)</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="72">
           
           
+          <code class="ruby">        format.html { redirect_to @brewery, notice: &#39;Brewery was successfully updated.&#39; }</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="73">
+          
+          
           <code class="ruby">        format.json { head :no_content }</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="73">
+        <li class="never" data-hits="" data-linenumber="74">
           
           
           <code class="ruby">      else</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="74">
+        <li class="missed" data-hits="0" data-linenumber="75">
           
           
           <code class="ruby">        format.html { render action: &#39;edit&#39; }</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="75">
+        <li class="missed" data-hits="0" data-linenumber="76">
           
           
           <code class="ruby">        format.json { render json: @brewery.errors, status: :unprocessable_entity }</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="76">
+        <li class="never" data-hits="" data-linenumber="77">
           
           
           <code class="ruby">      end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="77">
-          
-          
-          <code class="ruby">    end</code>
-        </li>
-      
         <li class="never" data-hits="" data-linenumber="78">
           
           
-          <code class="ruby">  end</code>
+          <code class="ruby">    end</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="79">
           
           
-          <code class="ruby"></code>
+          <code class="ruby">  end</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="80">
           
           
-          <code class="ruby">  # DELETE /breweries/1</code>
+          <code class="ruby"></code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="81">
           
           
+          <code class="ruby">  # DELETE /breweries/1</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="82">
+          
+          
           <code class="ruby">  # DELETE /breweries/1.json</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="82">
+        <li class="covered" data-hits="1" data-linenumber="83">
           <span class="hits">1</span>
           
           <code class="ruby">  def destroy</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="83">
+        <li class="missed" data-hits="0" data-linenumber="84">
           
           
           <code class="ruby">    @brewery.destroy</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="84">
+        <li class="missed" data-hits="0" data-linenumber="85">
           
           
           <code class="ruby">    respond_to do |format|</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="85">
+        <li class="missed" data-hits="0" data-linenumber="86">
           
           
           <code class="ruby">      format.html { redirect_to breweries_url }</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="86">
+        <li class="missed" data-hits="0" data-linenumber="87">
           
           
           <code class="ruby">      format.json { head :no_content }</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="87">
-          
-          
-          <code class="ruby">    end</code>
-        </li>
-      
         <li class="never" data-hits="" data-linenumber="88">
           
           
-          <code class="ruby">  end</code>
+          <code class="ruby">    end</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="89">
           
           
+          <code class="ruby">  end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="90">
+          
+          
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="90">
+        <li class="covered" data-hits="1" data-linenumber="91">
           <span class="hits">1</span>
           
           <code class="ruby">  private</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="91">
-          
-          
-          <code class="ruby">    # Use callbacks to share common setup or constraints between actions.</code>
-        </li>
-      
         <li class="covered" data-hits="1" data-linenumber="92">
           <span class="hits">1</span>
           
-          <code class="ruby">    def set_brewery</code>
+          <code class="ruby">  def skip_if_cached</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="93">
-          <span class="hits">1</span>
+        <li class="covered" data-hits="3" data-linenumber="93">
+          <span class="hits">3</span>
           
-          <code class="ruby">      @brewery = Brewery.find(params[:id])</code>
+          <code class="ruby">    return render :index if fragment_exist?(&#39;brewerylist&#39;)</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="94">
           
           
-          <code class="ruby">    end</code>
+          <code class="ruby">  end</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="95">
@@ -2406,28 +2472,28 @@
           <code class="ruby"></code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="96">
+        <li class="covered" data-hits="1" data-linenumber="96">
+          <span class="hits">1</span>
           
-          
-          <code class="ruby">    # Never trust parameters from the scary internet, only allow the white list through.</code>
+          <code class="ruby">  private</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="97">
           <span class="hits">1</span>
           
-          <code class="ruby">    def brewery_params</code>
+          <code class="ruby">  def expire_brewerylist_fragment</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="98">
           
           
-          <code class="ruby">      params.require(:brewery).permit(:name, :year, :active)</code>
+          <code class="ruby">    expire_fragment(&#39;brewerylist&#39;)</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="99">
           
           
-          <code class="ruby">    end</code>
+          <code class="ruby">  end</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="100">
@@ -2436,61 +2502,127 @@
           <code class="ruby"></code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="101">
+        <li class="covered" data-hits="1" data-linenumber="101">
+          <span class="hits">1</span>
           
-          
-          <code class="ruby">    #def authenticate</code>
+          <code class="ruby">  private</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="102">
           
           
-          <code class="ruby">    #  admin_accounts = { &quot;admin&quot; =&gt; &quot;secret&quot;, &quot;pekka&quot; =&gt; &quot;beer&quot;, &quot;arto&quot; =&gt; &quot;foobar&quot;, &quot;matti&quot; =&gt; &quot;ittam&quot;}</code>
+          <code class="ruby">    # Use callbacks to share common setup or constraints between actions.</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="103">
+        <li class="covered" data-hits="1" data-linenumber="103">
+          <span class="hits">1</span>
           
-          
-          <code class="ruby">    #</code>
+          <code class="ruby">    def set_brewery</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="104">
+        <li class="covered" data-hits="1" data-linenumber="104">
+          <span class="hits">1</span>
           
-          
-          <code class="ruby">    #  authenticate_or_request_with_http_basic do |username, password|</code>
+          <code class="ruby">      @brewery = Brewery.find(params[:id])</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="105">
           
           
-          <code class="ruby">    #    # username == &quot;admin&quot; and password == &quot;secret&quot;</code>
+          <code class="ruby">    end</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="106">
           
           
-          <code class="ruby">    #    admin_accounts[username] == password</code>
+          <code class="ruby"></code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="107">
           
           
+          <code class="ruby">    # Never trust parameters from the scary internet, only allow the white list through.</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="108">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    def brewery_params</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="109">
+          
+          
+          <code class="ruby">      params.require(:brewery).permit(:name, :year, :active)</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="110">
+          
+          
+          <code class="ruby">    end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="111">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="112">
+          
+          
+          <code class="ruby">    #def authenticate</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="113">
+          
+          
+          <code class="ruby">    #  admin_accounts = { &quot;admin&quot; =&gt; &quot;secret&quot;, &quot;pekka&quot; =&gt; &quot;beer&quot;, &quot;arto&quot; =&gt; &quot;foobar&quot;, &quot;matti&quot; =&gt; &quot;ittam&quot;}</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="114">
+          
+          
+          <code class="ruby">    #</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="115">
+          
+          
+          <code class="ruby">    #  authenticate_or_request_with_http_basic do |username, password|</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="116">
+          
+          
+          <code class="ruby">    #    # username == &quot;admin&quot; and password == &quot;secret&quot;</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="117">
+          
+          
+          <code class="ruby">    #    admin_accounts[username] == password</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="118">
+          
+          
           <code class="ruby">    #  end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="108">
+        <li class="never" data-hits="" data-linenumber="119">
           
           
           <code class="ruby">    #  # raise &quot;Not yet implemented&quot;</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="109">
+        <li class="never" data-hits="" data-linenumber="120">
           
           
           <code class="ruby">    #end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="110">
+        <li class="never" data-hits="" data-linenumber="121">
           
           
           <code class="ruby">end</code>
@@ -4725,7 +4857,7 @@
         <li class="covered" data-hits="1" data-linenumber="2">
           <span class="hits">1</span>
           
-          <code class="ruby">  belongs_to :brewery</code>
+          <code class="ruby">  belongs_to :brewery, touch: true</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="3">
@@ -5337,7 +5469,7 @@
         <li class="covered" data-hits="1" data-linenumber="2">
           <span class="hits">1</span>
           
-          <code class="ruby">  belongs_to :beer</code>
+          <code class="ruby">  belongs_to :beer, touch: true</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="3">
@@ -7719,8 +7851,8 @@
     <h3>lib/rating_average.rb</h3>
     <h4><span class="green">100.0 %</span> covered</h4>
     <div>
-      <b>7</b> relevant lines. 
-      <span class="green"><b>7</b> lines covered</span> and
+      <b>9</b> relevant lines. 
+      <span class="green"><b>9</b> lines covered</span> and
       <span class="red"><b>0</b> lines missed.</span>
     </div>
   </div>
@@ -7728,10 +7860,10 @@
   <pre>
     <ol>
       
-        <li class="covered" data-hits="1" data-linenumber="1">
-          <span class="hits">1</span>
+        <li class="covered" data-hits="2" data-linenumber="1">
+          <span class="hits">2</span>
           
-          <code class="ruby">module RatingAverage</code>
+          <code class="ruby">module RatingAverage extend ActiveSupport::Concern</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="2">
@@ -7755,34 +7887,46 @@
         <li class="covered" data-hits="9" data-linenumber="5">
           <span class="hits">9</span>
           
+          <code class="ruby">      count = 0</code>
+        </li>
+      
+        <li class="covered" data-hits="9" data-linenumber="6">
+          <span class="hits">9</span>
+          
           <code class="ruby">      ratings.each do |rating|</code>
         </li>
       
-        <li class="covered" data-hits="10" data-linenumber="6">
+        <li class="covered" data-hits="10" data-linenumber="7">
           <span class="hits">10</span>
           
           <code class="ruby">        sum += rating.score</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="7">
+        <li class="covered" data-hits="10" data-linenumber="8">
+          <span class="hits">10</span>
           
-          
-          <code class="ruby">      end</code>
-        </li>
-      
-        <li class="covered" data-hits="9" data-linenumber="8">
-          <span class="hits">9</span>
-          
-          <code class="ruby">      sum/ratings.count</code>
+          <code class="ruby">        count+=1</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="9">
           
           
+          <code class="ruby">      end</code>
+        </li>
+      
+        <li class="covered" data-hits="9" data-linenumber="10">
+          <span class="hits">9</span>
+          
+          <code class="ruby">      sum/count</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="11">
+          
+          
           <code class="ruby">  end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="10">
+        <li class="never" data-hits="" data-linenumber="12">
           
           
           <code class="ruby">end</code>
