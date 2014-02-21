@@ -2,7 +2,7 @@ class BreweriesController < ApplicationController
   before_action :set_brewery, only: [:show, :edit, :update, :destroy]
   before_action :enforce_signin, only: [:new]
   before_action :enforce_admin_signin, only:[:destroy, :edit]
-  after_action :expire_brewerylist_fragment, only: [:create, :destroy, :update]
+  after_action :expire_brewerylist_fragment, only: [:create, :destroy, :update, :toggle_activity]
   before_action :skip_if_cached, only: :index
 
   # GET /breweries
@@ -95,7 +95,7 @@ class BreweriesController < ApplicationController
 
   private
   def expire_brewerylist_fragment
-
+    expire_fragment('brewerylist')
   end
 
   private
