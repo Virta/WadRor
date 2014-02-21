@@ -2,7 +2,8 @@ class BreweriesController < ApplicationController
   before_action :set_brewery, only: [:show, :edit, :update, :destroy]
   before_action :enforce_signin, only: [:new]
   before_action :enforce_admin_signin, only:[:destroy, :edit]
-  #before_action :authenticate, :only => :destroy
+  after_action :expire_brewerylist_fragment, only: [:create, :destroy, :update]
+  before_action :skip_if_cached, only: :index
 
   # GET /breweries
   # GET /breweries.json
@@ -85,6 +86,16 @@ class BreweriesController < ApplicationController
       format.html { redirect_to breweries_url }
       format.json { head :no_content }
     end
+  end
+
+  private
+  def skip_if_cached
+    return render :index if fragment_exist?('brewerylist')
+  end
+
+  private
+  def expire_brewerylist_fragment
+
   end
 
   private

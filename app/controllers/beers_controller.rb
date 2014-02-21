@@ -3,6 +3,13 @@ class BeersController < ApplicationController
   before_action :current_user, only: [:new, :create, :edit]
   before_action :enforce_signin, only: [:new]
   before_action :enforce_admin_signin, only:[:destroy, :edit]
+  after_action :expire_beerlist_fragment, only:[:create, :destroy, :update]
+  before_action :skip_if_cached, only: :index
+
+  def skip_if_cached
+    @order = params[:order] || 'name'
+    return render :index if fragment_exist?( "beerlist-#{params[:order]}"  )
+  end
 
   # GET /beers
   # GET /beers.json
@@ -93,5 +100,9 @@ class BeersController < ApplicationController
   def set_breweries_and_styles
     @breweries = Brewery.all
     @styles = Style.all
+  end
+
+  def expire_beerlist_fragment
+    ["name", "style", "brewery"].each{ |f| expire_fragment("beerlist-#{f}") }
   end
 end
