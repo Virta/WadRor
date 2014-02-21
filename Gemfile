@@ -27,6 +27,9 @@ end
 # API-key db
 gem 'rails-settings-cached'
 
+# miniprofiler replaces log
+gem 'rack-mini-profiler'
+
 # HTTP-requests gem
 gem 'httparty'
 
